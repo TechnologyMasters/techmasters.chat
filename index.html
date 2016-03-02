@@ -1,228 +1,143 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Technology Master</title>
+---
+layout: default
+---
 
-  <!-- Bootstrap -->
+<section class="hero">
+  <div id="particles-js"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center middle">
+        <div class="logo"><img src="/assets/images/logo.png" height="174" width="140" alt="Tech Masters"></div>
+        <h1 class="title">#TechMasters</h1>
+        <p class="slogan">{{ site.description }}</p>
+        <p>Join Now </p>
+        <div class="btn btn-round" id="joinBtn"><script async defer src="https://technologymasters.herokuapp.com/slackin.js"></script></div>
+      </div>
+    </div>
+  </div>
+  <div class="arrow bounce"><a href="#maincontent" class="arrow-link"></a></div>
+</section>
 
-  <link href='https://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>
-  <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/app.css" rel="stylesheet">
+<section class="intro" id="maincontent">
+  <div class="container">
+    <!--
+    <h1 class="text-center">Passionate Technologists</h1>
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
-    </head>
-    <body>
-      <section class="hero">
-        <div id="particles-js"></div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 text-center middle">
-              <div class="logo">
-                <img src="images/logo.png" height="174" width="140" alt="">
-              </div>
-              <h1 class="title">#TechMasters</h1>
-              <p class="slogan">Is a general community tying together a diverse and passionate group of technologists, entrepreneurs, and developers from around the world.</p>
-              <a href="#joinNow" class="btn btn-round" id="joinBtn">Join Now</a>
+    <hr/>
+
+    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <ul class="list-inline text-center founders">
+          {% for member in site.data.members %}
+            <li>
+              <figure>
+                <img src="https://www.ahmadnassri.com/assets/images/avatar.jpg" alt="{{ member.name }}">
+                <p class="caption">{{ member.name }}</p>
+              </figure>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    -->
+
+    <h1 class="text-center">Official Community Channel</h1>
+
+    <hr/>
+
+    <p class="text-center">#TechMasters is the official community chat channel for:</p>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <ul class="list-inline text-center logos">
+          <li><a href="http://producthunttoronto.com/"><img src="/assets/images/producthunttoronto.png" alt="ProductHuntTO"></a></li>
+          <li><a href="https://fsto.co/" target="_blank"><img src="/assets/images/fsto.png" alt="FullStack Toronto"></a></li>
+          <li><a href="http://www.devto.ca/"><img src="http://www.devto.ca/devTOLogo.png" alt="DevTO"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!--
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="quote"><i class="fa fa-quote-left fa-4x"></i></div>
+
+        <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="7000">
+
+          <ol class="carousel-indicators">
+            <li data-target="#fade-quote-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
+            <li data-target="#fade-quote-carousel" data-slide-to="2"></li>
+          </ol>
+
+          <div class="carousel-inner">
+            <div class="active item">
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+              </blockquote>
+              <p class="author">Ahmad Nassri</p>
             </div>
-          </div>
-        </div>
-        <div class="arrow bounce"><a href="#maincontent" class="arrow-link"></a></div>
-      </section>
-
-      <section class="intro" id="maincontent">
-        <div class="container">
-          <h1 class="text-center">Founders with passion to do something</h1>
-          <hr>
-          <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          <div class="row">
-            <div class="col-lg-12">
-              <ul class="list-inline text-center founders">
-                <li>
-                  <figure>
-                    <img src="https://www.ahmadnassri.com/assets/images/avatar.jpg" alt="">
-                    <p class="caption">Ahmad Nassri</p>
-                  </figure>
-                </li>
-                <li>
-                  <figure>
-                    <img src="https://www.ahmadnassri.com/assets/images/avatar.jpg" alt="">
-                    <p class="caption">Ahmad Nassri</p>
-                  </figure>
-                </li>
-                <li>
-                  <figure>
-                    <img src="https://www.ahmadnassri.com/assets/images/avatar.jpg" alt="">
-                    <p class="caption">Ahmad Nassri</p>
-                  </figure>
-                </li>
-                <li>
-                  <figure>
-                    <img src="https://www.ahmadnassri.com/assets/images/avatar.jpg" alt="">
-                    <p class="caption">Ahmad Nassri</p>
-                  </figure>
-                </li>
-                <li>
-                  <figure>
-                    <img src="https://www.ahmadnassri.com/assets/images/avatar.jpg" alt="">
-                    <p class="caption">Ahmad Nassri</p>
-                  </figure>
-                </li>
-                <li>
-                  <figure>
-                    <img src="https://www.ahmadnassri.com/assets/images/avatar.jpg" alt="">
-                    <p class="caption">Ahmad Nassri</p>
-                  </figure>
-                </li>
-                <li>
-                  <figure>
-                    <img src="https://www.ahmadnassri.com/assets/images/avatar.jpg" alt="">
-                    <p class="caption">Ahmad Nassri</p>
-                  </figure>
-                </li>
-                <li>
-                  <figure>
-                    <img src="https://www.ahmadnassri.com/assets/images/avatar.jpg" alt="">
-                    <p class="caption">Ahmad Nassri</p>
-                  </figure>
-                </li>
-              </ul>
+            <div class="item">
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+              </blockquote>
+              <p class="author">Amanullah</p>
             </div>
-          </div>
-
-          <h1 class="text-center">Official Slack</h1>
-          <hr>
-          <p class="text-center">for <a href="https://fsto.co/" target="_blank">#fstoco</a>, <a href="http://www.devto.ca/">#devto</a>, <a href="http://producthunttoronto.com/">@ProductHuntTO</a></p>
-          <div class="row">
-            <div class="col-lg-12">
-              <ul class="list-inline text-center logos">
-                <li>
-                  <img src="http://181.224.137.33/~producth/wp-content/uploads/2015/08/logo3.png" alt="">
-                </li>
-                <li>
-                  <img src="https://fsto.co/static/images/fsto-logo.png" alt="">
-                </li>
-                <li>
-                  <img src="http://www.devto.ca/devTOLogo.png" alt="">
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-              <div class="quote"><i class="fa fa-quote-left fa-4x"></i></div>
-              <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="7000">
-                <!-- Carousel indicators -->
-                <ol class="carousel-indicators">
-                  <li data-target="#fade-quote-carousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
-                  <li data-target="#fade-quote-carousel" data-slide-to="2"></li>
-                </ol>
-                <!-- Carousel items -->
-                <div class="carousel-inner">
-                  <div class="active item">
-                    <blockquote>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
-                    </blockquote>
-                    <p class="author">Ahmad Nassri</p>
-                  </div>
-                  <div class="item">
-                    <blockquote>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
-                    </blockquote>
-                    <p class="author">Amanullah</p>
-                  </div>
-                  <div class="item">
-                    <blockquote>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
-                    </blockquote>
-                    <p class="author">Ahmad Nassri</p>
-                  </div>
-                </div>
-              </div>
-            </div> 
-          </div>
-          <div class="channels">
-            <div class="row">
-              <div class="col-lg-12">
-                <h1 class="text-center">Channels</h1>
-                <hr>
-              </div>
-            </div>
-            <div class="row channelsList">
-              <div class="col-lg-4">
-                <h3>#General</h3>
-                <p class="desc">The general channel is a place for Tech Masters to meet others Masters of their respective Tech fields, and to introduce themselves and discuss topics that don't quite fit in the other channels</p>
-              </div>
-              <div class="col-lg-4">
-                <h3>#Business</h3>
-                <p class="desc">Business Strategy, Business News, and Business Intelligence... If it has anything to do with Business, this is the place to talk about it! </p>
-              </div>
-              <div class="col-lg-4">
-                <h3>#Jobs</h3>
-                <p class="desc">Is your company hiring? Do you want to be hired? Post your jobs and requests here! Don't forget to /invite anyone to this channel who is looking or posting</p>
-              </div>
-            </div>
-            <div class="row channelsList">
-              <div class="col-lg-4">
-                <h3>#Debugging</h3>
-                <p class="desc">when #programming questions get too detailed, use this channel to cut the noise and do 1:1 debugging with others</p>
-              </div>
-
-              <div class="col-lg-4">
-                <h3>#Technology</h3>
-                <p class="desc">As Arthur C. Clarke once said, "Any sufficiently advanced technology is indistinguishable from magic." ... But we Tech Masters know better, don't we? Let's talk about the tech we know and want to know.</p>
-              </div>
-
-              <div class="col-lg-4">
-                <h3>#Science</h3>
-                <p class="desc">Edward Teller once said, "The #science of today is the #technology of tomorrow." Let's talk about the things that will amaze us tomorrow!</p>
-              </div>
-            </div>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-      </section>
-      <section id="carousel">           
-        <div class="container">
-          <div class="row">
-
-          </div>
-        </div>
-
-        <div id="joinNow"></div>
-        <iframe src="http://technologymasters.herokuapp.com/" frameborder="0" width="100%" height="500"></iframe>
-      </section>
-      <div class="footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-9">
-              <p class="copyright text-left">
-                &copy; 2015 - 2016 All rights reserved Technology Master | <a href="code-of-conduct.html">Code of Conduct </a>
-              </p>
-            </div>
-            <div class="col-lg-3">
-              <p class="copyright text-right">
-                Credits By: <a href="http://intellecta.co">Intellecta.CO</a>
-              </p>
+            <div class="item">
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
+              </blockquote>
+              <p class="author">Ahmad Nassri</p>
             </div>
           </div>
         </div>
       </div>
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-      <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
-      <script src="js/pace.min.js"></script>
-      <script src="js/particles.min.js"></script>
-      <script src="js/app.js"></script>
-    </body>
-    </html>
+    </div>
+    -->
+
+    <div class="channels">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center">Rich Channels &amp; Discussions</h1>
+          <hr>
+        </div>
+      </div>
+      <div class="row channelsList">
+        <div class="col-lg-4">
+          <h3>#General</h3>
+          <p class="desc">The general channel is a place for Tech Masters to meet others Masters of their respective Tech fields, and to introduce themselves and discuss topics that don't quite fit in the other channels</p>
+        </div>
+        <div class="col-lg-4">
+          <h3>#Business</h3>
+          <p class="desc">Business Strategy, Business News, and Business Intelligence... If it has anything to do with Business, this is the place to talk about it! </p>
+        </div>
+        <div class="col-lg-4">
+          <h3>#Jobs</h3>
+          <p class="desc">Is your company hiring? Do you want to be hired? Post your jobs and requests here! Don't forget to /invite anyone to this channel who is looking or posting</p>
+        </div>
+      </div>
+      <div class="row channelsList">
+        <div class="col-lg-4">
+          <h3>#Debugging</h3>
+          <p class="desc">when #programming questions get too detailed, use this channel to cut the noise and do 1:1 debugging with others</p>
+        </div>
+
+        <div class="col-lg-4">
+          <h3>#Technology</h3>
+          <p class="desc">As Arthur C. Clarke once said, "Any sufficiently advanced technology is indistinguishable from magic." ... But we Tech Masters know better, don't we? Let's talk about the tech we know and want to know.</p>
+        </div>
+
+        <div class="col-lg-4">
+          <h3>#Science</h3>
+          <p class="desc">Edward Teller once said, "The #science of today is the #technology of tomorrow." Let's talk about the things that will amaze us tomorrow!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+</section>
+
+<iframe src="https://technologymasters.herokuapp.com/" frameborder="0" width="100%" height="400"></iframe>

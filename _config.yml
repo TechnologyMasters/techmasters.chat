@@ -1,0 +1,8 @@
+# Site settings
+url: https://techmasters.chat
+title: Technology Masters
+description: >
+  an online community tying together a diverse and passionate group of technologists, entrepreneurs, and developers from Toronto, Canada and all around the world.
+
+# Build settings
+markdown: kramdown
