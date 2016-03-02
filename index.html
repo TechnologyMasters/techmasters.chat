@@ -10,8 +10,15 @@ layout: default
         <div class="logo"><img src="/assets/images/logo.png" height="174" width="140" alt="Tech Masters"></div>
         <h1 class="title">#TechMasters</h1>
         <p class="slogan">{{ site.description }}</p>
-        <p>Join Now </p>
-        <div class="btn btn-round" id="joinBtn"><script async defer src="https://technologymasters.herokuapp.com/slackin.js"></script></div>
+
+        <a id="joinBtn" class="btn btn-round" href="#join">Join Now</a>
+        <a class="btn btn-round" href="https://techmasters.slack.com/">Sign in</a>
+
+        <br/>
+        <br/>
+        <br/>
+
+        <script async defer src="https://technologymasters.herokuapp.com/slackin.js?large"></script>
       </div>
     </div>
   </div>
@@ -140,4 +147,6 @@ layout: default
   </div>
 </section>
 
-<iframe src="https://technologymasters.herokuapp.com/" frameborder="0" width="100%" height="400"></iframe>
+<section class="join" id="join">
+  <iframe src="https://technologymasters.herokuapp.com/" frameborder="0" width="100%" height="410"></iframe>
+</section>
