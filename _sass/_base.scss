@@ -1,3 +1,18 @@
+@mixin trans($x, $y) {
+  -webkit-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+@mixin large-screen {
+  @media (min-height: 650px) {
+    @content;
+  }
+}
+@mixin narrow-screen {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+
 body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -11,21 +26,69 @@ body {
 
 .hero{
   background: #5C258D;
-  background: -webkit-linear-gradient(to left, #5C258D , #4389A2);
-  background: -webkit-linear-gradient(right, #5C258D , #4389A2);
-  background: linear-gradient(to left, #5C258D , #4389A2);
-  height: 100vh;
+  background: -webkit-linear-gradient(to left, #5C258D, #4389A2);
+  background: -webkit-linear-gradient(right, #5C258D, #4389A2);
+  background: linear-gradient(to left, #5C258D, #4389A2);
+  min-height: 100vh;
+  height: auto;
   position: relative;
   color: #fff;
+  @include large-screen {
+    height: 100vh;
+  }
+
+  .container {
+    height: 100%;
+    width: 100%;
+    padding-top: 1em;
+    @include large-screen {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      @include trans(-50%,0);
+    }
+    
+  }
+
+  .row {
+    margin: 0 auto;
+    @include large-screen {
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      width: auto;
+      top: 50%;
+      @include trans(0,-50%);
+    }
+  }
+
+  .row:before, .row:after,
+  .container:before, .container:after {display: none;}
 }
 
-h1.title { padding-top: 3%;padding-bottom: 20px;font-weight: 600;font-size: 40px;}
+.hero:before, .hero:after {
+  display: none;
+}
 
-.slogan { max-width: 800px; margin: 0 auto;margin-bottom: 35px;font-size: 27px;}
+h1.title {
+  font-weight: 600;
+  font-size: 1.8em;
+  margin: 0.5em auto;
+  }
+
+.slogan {
+  max-width: 800px;
+  margin: 0.5em auto 1.5em;
+  font-size: 26px;
+  transition: font-size 0.3s;
+  @include narrow-screen {
+    font-size: 16px;
+  }
+}
 
 canvas {
   display: block;
-  vertical-align: bottom;
   z-index: 0;
 }
 
@@ -45,6 +108,12 @@ canvas {
   max-height: 400px;
   text-align: center;
   margin: 0 auto;
+<<<<<<< 8678b90e71e1fc059f79e91940f2fc61323b3034
+=======
+  padding-top: 1px;
+  width: 100%;
+  padding: 0;
+>>>>>>> Makes hero area responsive
 }
 
 .middle {
@@ -81,9 +150,31 @@ canvas {
   transform: translate(-50%, -50%);
   width: 40px;
   height: 40px;
+<<<<<<< 8678b90e71e1fc059f79e91940f2fc61323b3034
   background-image: url('/assets/images/arrow.png');
   background-repeat: no-repeat;
   background-size: contain;
+=======
+  margin: 0 auto;
+  bottom: 0;
+  background-image: url("/assets/images/arrow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  @include large-screen {
+    position: absolute;
+    left: 50%;
+    @include trans(-50%, 0);
+  }
+  }
+
+.__slackin {
+  display: block;
+  position: relative;
+  margin: 1.5em auto;
+  @include narrow-screen {
+    margin: 1em auto;
+  }
+>>>>>>> Makes hero area responsive
 }
 
 .bounce {
@@ -169,10 +260,28 @@ a.arrow-link {
   transform: translate3d(0, 0, 0) !important;
 }
 
+<<<<<<< 8678b90e71e1fc059f79e91940f2fc61323b3034
 .footer-nav > * {
   margin-right: 10px;
 }
 
+=======
+/* Footer Area */
+.join {
+  iframe {
+    overflow: hidden;
+  }
+}
+p.copyright {
+    font-size: 12px;
+    font-family: arial;
+    margin: 0px;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+/* Inner Pages */
+>>>>>>> Makes hero area responsive
 .innerPage {
   padding-top: 30px;
   padding-bottom: 30px;
