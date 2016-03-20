@@ -1,3 +1,18 @@
+@mixin trans($x, $y) {
+  -webkit-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+@mixin large-screen {
+  @media (min-height: 650px) {
+    @content;
+  }
+}
+@mixin narrow-screen {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+
 body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -15,15 +30,46 @@ body {
   background: -webkit-linear-gradient(right, #5C258D, #4389A2);
   background: linear-gradient(to left, #5C258D, #4389A2);
   min-height: 100vh;
+  height: auto;
   position: relative;
-  color: #fff; }
+  color: #fff;
+  @include large-screen {
+    height: 100vh;
+  }
 
-.container {
+  .container {
+    height: 100%;
+    width: 100%;
+    padding-top: 1em;
+    @include large-screen {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      @include trans(-50%,0);
+    }
+    
+  }
+
+  .row {
+    margin: 0 auto;
+    @include large-screen {
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      width: auto;
+      top: 50%;
+      @include trans(0,-50%);
+    }
+  }
+
+  .row:before, .row:after,
+  .container:before, .container:after {display: none;}
 }
 
-
-.logo {
-  margin-top: 1em; }
+.hero:before, .hero:after {
+  display: none;
+}
 
 h1.title {
   font-weight: 600;
@@ -34,8 +80,9 @@ h1.title {
 .slogan {
   max-width: 800px;
   margin: 0.5em auto 1.5em;
-  font-size: 3.3vh;
-  @media (max-height: 500px) {
+  font-size: 26px;
+  transition: font-size 0.3s;
+  @include narrow-screen {
     font-size: 16px;
   }
 }
@@ -64,7 +111,10 @@ canvas {
 .middle {
   position: relative;
   margin: 0 auto;
-  width: 100%; }
+  padding-top: 1px;
+  width: 100%;
+  padding: 0;
+}
 
 .intro {
   background: #FBFBFB; }
@@ -88,15 +138,25 @@ canvas {
   width: 40px;
   height: 40px;
   margin: 0 auto;
+  bottom: 0;
   background-image: url("/assets/images/arrow.png");
   background-repeat: no-repeat;
   background-size: contain;
+  @include large-screen {
+    position: absolute;
+    left: 50%;
+    @include trans(-50%, 0);
+  }
   }
 
 .__slackin {
   display: block;
   position: relative;
-  margin: 1.5em auto; }
+  margin: 1.5em auto;
+  @include narrow-screen {
+    margin: 1em auto;
+  }
+}
 
 .bounce {
   -webkit-animation: bounce 2s infinite;
@@ -180,6 +240,13 @@ a.arrow-link {
   -webkit-transform: translate3d(0, 0, 0) !important;
   transform: translate3d(0, 0, 0) !important;
 }
+
+/* Footer Area */
+.join {
+  iframe {
+    overflow: hidden;
+  }
+}
 p.copyright {
     font-size: 12px;
     font-family: arial;
@@ -187,6 +254,8 @@ p.copyright {
     padding: 10px;
     text-transform: uppercase;
 }
+
+/* Inner Pages */
 .innerPage {
   padding-top: 30px;
   padding-bottom: 30px;
