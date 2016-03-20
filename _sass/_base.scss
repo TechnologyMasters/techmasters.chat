@@ -6,28 +6,44 @@ body {
   font-family: 'Raleway',Helvetica,sans-serif;
   font-size: 22px;
   -webkit-transition: .3s;
-  transition: .3s;
-}
+  transition: .3s; }
 
-.hero{
+.hero {
+  width: 100%;
   background: #5C258D;
-  background: -webkit-linear-gradient(to left, #5C258D , #4389A2);
-  background: -webkit-linear-gradient(right, #5C258D , #4389A2);
-  background: linear-gradient(to left, #5C258D , #4389A2);
-  height: 100vh;
+  background: -webkit-linear-gradient(to left, #5C258D, #4389A2);
+  background: -webkit-linear-gradient(right, #5C258D, #4389A2);
+  background: linear-gradient(to left, #5C258D, #4389A2);
+  min-height: 100vh;
   position: relative;
-  color: #fff;
+  color: #fff; }
+
+.container {
 }
 
-h1.title { padding-top: 3%;padding-bottom: 20px;font-weight: 600;font-size: 40px;}
 
-.slogan { max-width: 800px; margin: 0 auto;margin-bottom: 35px;font-size: 27px;}
+.logo {
+  margin-top: 1em; }
+
+h1.title {
+  font-weight: 600;
+  font-size: 1.8em;
+  margin: 0.5em auto;
+  }
+
+.slogan {
+  max-width: 800px;
+  margin: 0.5em auto 1.5em;
+  font-size: 3.3vh;
+  @media (max-height: 500px) {
+    font-size: 16px;
+  }
+}
 
 canvas {
   display: block;
   vertical-align: bottom;
-  z-index: 0;
-}
+  z-index: 0; }
 
 #particles-js {
   position: absolute;
@@ -35,56 +51,52 @@ canvas {
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50% 50%;
-}
+  background-position: 50% 50%; }
 
-.hero a { color: #fff;}
+.hero a {
+  color: #fff; }
 
-.heroimg
-{
+.heroimg {
   max-height: 400px;
   text-align: center;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
 .middle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
-  width: 100%;
-    max-width: 750px;
-}
+  position: relative;
+  margin: 0 auto;
+  width: 100%; }
 
-.intro { background: #FBFBFB;}
-.btn-round
-{
+.intro {
+  background: #FBFBFB; }
+
+.btn-round {
   border-radius: 20px;
   border: 2px solid #fff;
   color: #fff;
   padding: 10px 35px 10px 35px;
   -webkit-transition: .3s;
-  transition: .3s;
-}
+  transition: .3s; }
+
 .btn-round:hover {
   background: #fff;
   color: #000;
   -webkit-transition: .3s;
-  transition: .3s;
-}
+  transition: .3s; }
+
 .arrow {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  position: relative;
   width: 40px;
   height: 40px;
-  background-image: url('/assets/images/arrow.png');
+  margin: 0 auto;
+  background-image: url("/assets/images/arrow.png");
   background-repeat: no-repeat;
   background-size: contain;
-}
+  }
+
+.__slackin {
+  display: block;
+  position: relative;
+  margin: 1.5em auto; }
 
 .bounce {
   -webkit-animation: bounce 2s infinite;
