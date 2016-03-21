@@ -252,3 +252,27 @@ p.copyright span {float: right;}
   text-align: right;
   color: rgba(255, 255, 255, 0.19999999999999996);
 }
+
+/*-------------------------------*/
+/*    Responsive Media Queries   */
+/*-------------------------------*/
+@media(max-width: 700px) {
+    .slogan {
+      font-size: 20px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .logo img{
+      max-width: 95px;
+      height: auto;
+    }
+    .intro h1 {
+      font-size: 28px;
+    }
+    .channels hr {
+      padding: 0px;
+    }
+    .channels {
+      padding-bottom: 30px;
+    }
+}
