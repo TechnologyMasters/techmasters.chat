@@ -2,13 +2,19 @@
   -webkit-transform: translate($x, $y);
   transform: translate($x, $y);
 }
-@mixin large-screen {
+@mixin tall-screen {
   @media (min-height: 650px) {
     @content;
   }
 }
-@mixin narrow-screen {
-  @media (max-width: 500px) {
+@mixin mid-screen {
+  @media (min-width: 700px) {
+    @content;
+  }
+}
+@mixin small-screen {
+  //4-inch phones are making a comeback
+  @media (min-width: 384px) {
     @content;
   }
 }
@@ -33,7 +39,7 @@ body {
   height: auto;
   position: relative;
   color: #fff;
-  @include large-screen {
+  @include tall-screen {
     height: 100vh;
   }
 
@@ -41,7 +47,7 @@ body {
     height: 100%;
     width: 100%;
     padding-top: 1em;
-    @include large-screen {
+    @include tall-screen {
       position: absolute;
       top: 0;
       bottom: 0;
@@ -53,13 +59,23 @@ body {
 
   .row {
     margin: 0 auto;
-    @include large-screen {
+    @include tall-screen {
       position: absolute;
       left: 15px;
       right: 15px;
       width: auto;
       top: 50%;
       @include trans(0,-50%);
+    }
+  }
+
+  .logo img {
+    width: 95px;
+    height: auto;
+    transition: width 0.3s, height 0.3s;
+
+    @include mid-screen {
+      width: 140px;
     }
   }
 
@@ -80,11 +96,17 @@ h1.title {
 .slogan {
   max-width: 800px;
   margin: 0.5em auto 1.5em;
-  font-size: 26px;
+  font-size: 16px;
   transition: font-size 0.3s;
-  @include narrow-screen {
-    font-size: 16px;
+
+  @include small-screen {
+    font-size: 20px;
   }
+  @include mid-screen {
+    font-size: 26px;
+    padding: 0 15px;
+  }
+  
 }
 
 canvas {
@@ -142,7 +164,7 @@ canvas {
   background-image: url("/assets/images/arrow.png");
   background-repeat: no-repeat;
   background-size: contain;
-  @include large-screen {
+  @include tall-screen {
     position: absolute;
     left: 50%;
     @include trans(-50%, 0);
@@ -152,9 +174,9 @@ canvas {
 .__slackin {
   display: block;
   position: relative;
-  margin: 1.5em auto;
-  @include narrow-screen {
-    margin: 1em auto;
+  margin: 1em auto;
+  @include mid-screen {
+    margin: 1.5em auto;
   }
 }
 
@@ -338,15 +360,6 @@ p.copyright span {float: right;}
 /*    Responsive Media Queries   */
 /*-------------------------------*/
 @media(max-width: 700px) {
-    .slogan {
-      font-size: 20px;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-    .logo img{
-      max-width: 95px;
-      height: auto;
-    }
     .intro h1 {
       font-size: 28px;
     }
