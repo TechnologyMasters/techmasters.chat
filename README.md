@@ -24,7 +24,7 @@ directory inside the virtual machine. This allows you to use your favourite IDE 
 - `vagrant up` then wait for Vagrant to finish provisioning the virtual machine
 - `vagrant ssh` to terminal into the virtual machine
 - `cd /vagrant`
-- `jekyll server --watch --host 0.0.0.0` or `source /vagrant/runserver.sh` to start serving
+- `jekyll server --watch --force_polling --host 0.0.0.0` or `source /vagrant/runserver.sh` to start serving
 - browse to [http://localhost:8124](http://localhost:4000)
 
 ### Manual Installation
@@ -39,7 +39,7 @@ may be on your system.
 - Switch NVM environments **(needs instructions)**
 - `sudo gem install jekyll --no-rdoc --no-ri`
 - `sudo gem install github-pages --no-rdoc --no-ri`
-- `jekyll serve -w` or `source ./runserver.sh` to start serving
+- `jekyll serve -w --force_polling` or `source ./runserver.sh` to start serving
 - browse to [http://localhost:8124](http://localhost:4000)
 
 ## Usage
@@ -51,7 +51,10 @@ Assuming Vagrant is being used:
 - `source ./runserver.sh` to start serving
 - browse to [http://localhost:8124](http://localhost:4000)
 
-Jekyll will watch for changes and update the browser automatically when detected.
+Jekyll will watch for changes and update the trigger a rebuild.
+
+**NOTE:** The `--force_polling` flag on Jekyll serve is required by some host operating systems (Windows) in order to 
+overcome a VirtualBox "sendfile" bug. Without it, changes to files won't trigger the watcher to rebuild.
 
 Visit the [Jekyll Documentation](https://jekyllrb.com/docs/home/) for information on how to modify pages and settings.
 
