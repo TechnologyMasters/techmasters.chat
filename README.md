@@ -12,12 +12,19 @@ version of all the dependencies, doesn't require NVM and won't clutter your syst
 
 ### Vagrant Installation
 
+Vagrant will create a virtual machine, provision it with Jekyll and all its dependencies, 
+forward port 4000 to your host OS and synchronize the repository directory with a `/vagrant` 
+directory inside the virtual machine. This allows you to use your favourite IDE on your host OS.
+
 - Install VirtualBox
 - Install Vagrant
 - Open a terminal (cmd on Windows)
 - `git clone <this_repo>`
 - `cd <this_repo>`
 - `vagrant up` then wait for Vagrant to finish provisioning the virtual machine
+- `vagrant ssh` to terminal into the virtual machine
+- `cd /vagrant`
+- `jekyll server --watch --host 0.0.0.0` or `source /vagrant/runserver.sh` to start serving
 - browse to [http://localhost:8124](http://localhost:4000)
 
 ### Manual Installation
@@ -32,17 +39,41 @@ may be on your system.
 - Switch NVM environments **(needs instructions)**
 - `sudo gem install jekyll --no-rdoc --no-ri`
 - `sudo gem install github-pages --no-rdoc --no-ri`
-- `jekyll serve -w`
+- `jekyll serve -w` or `source ./runserver.sh` to start serving
 - browse to [http://localhost:8124](http://localhost:4000)
 
 ## Usage
 
+Assuming Vagrant is being used:
+
+- `vagrant up` to ensure the virtual machine is running
+- `vagrant ssh` to terminal into the virtual machine
+- `source ./runserver.sh` to start serving
+- browse to [http://localhost:8124](http://localhost:4000)
+
+Jekyll will watch for changes and update the browser automatically when detected.
+
+Visit the [Jekyll Documentation](https://jekyllrb.com/docs/home/) for information on how to modify pages and settings.
+
 ## Deployment
+
+Simply push to GitHub and GitHub Pages will automatically build.
 
 ## Contributing
 
-- `vagrant up`
-- `vagrant ssh` to terminal into the virtual machine
+- Fork this repository on GitHub
+- `git clone <your_fork>`
+- `git checkout -b feature-branch-name` where `feature-branch-name` describes what your change will be
+- Make the necessary changes
+- Thoroughly test your changes
+- `git commit -am "this is what I did"`
+- `git push -u origin feature-branch-name`
+- Create a pull request on GitHub
+
+### Rules for Contributing
+
+- Please maintain the same the same code style as the rest of the code base.
+- One pull request per feature.
 
 ## License
 
