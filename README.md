@@ -18,7 +18,7 @@ version of all the dependencies, doesn't require NVM and won't clutter your syst
 - `git clone <this_repo>`
 - `cd <this_repo>`
 - `vagrant up` then wait for Vagrant to finish provisioning the virtual machine
-- `vagrant ssh` to terminal into the virtual machine
+- browse to [http://localhost:8124](http://localhost:4000)
 
 ### Manual Installation
 
@@ -32,12 +32,17 @@ may be on your system.
 - Switch NVM environments **(needs instructions)**
 - `sudo gem install jekyll --no-rdoc --no-ri`
 - `sudo gem install github-pages --no-rdoc --no-ri`
+- `jekyll serve -w`
+- browse to [http://localhost:8124](http://localhost:4000)
 
 ## Usage
 
 ## Deployment
 
 ## Contributing
+
+- `vagrant up`
+- `vagrant ssh` to terminal into the virtual machine
 
 ## License
 
