@@ -3,7 +3,7 @@
 The official website for the #TechMasters Slack Group [techmasters.chat](http://techmasters.chat)
 
 The site is published using [Jekyll](https://jekyllrb.com), a Ruby Gem that creates static
-pages that can be hosted anyhwhere.
+pages that can be hosted anywhere.
 
 ## Installation
 
@@ -40,3 +40,5 @@ may be on your system.
 ## Contributing
 
 ## License
+
+The MIT License (MIT). See [LICENSE](./LICENSE) for more details.
