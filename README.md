@@ -7,8 +7,8 @@ pages that can be hosted anywhere.
 
 ## Installation
 
-The Vagrant installation is recommended because it requires fewer steps, ensures the correct 
-version of all the dependencies, doesn't require NVM and won't clutter your system.
+The Vagrant installation is the easiest approach because it requires fewer steps, ensures the 
+correct version of all the dependencies, doesn't require NVM and won't clutter your system.
 
 ### Vagrant Installation
 
