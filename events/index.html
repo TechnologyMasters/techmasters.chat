@@ -1,0 +1,16 @@
+---
+layout: page
+title: Events
+---
+
+<div id="app" class="events">
+    <div class="calendar">
+    </div>
+
+    <ul class="agenda">
+        <li v-for='event in events'>[[event.summary]]</li>
+    </ul>
+</div>
+
+<script src="/assets/js/vue.min.js"></script>
+<script src="/assets/js/events.js"></script>
