@@ -11,6 +11,5 @@ apt-get install -y git
 apt-get install -y build-essential
 apt-get install -y ruby2.0 ruby2.0-dev
 apt-get install -y make gcc
-apt-get install -y nodejs
 gem install jekyll --no-rdoc --no-ri
 gem install github-pages therubyracer --no-rdoc --no-ri
