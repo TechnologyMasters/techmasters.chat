@@ -23,6 +23,7 @@ directory inside the virtual machine. This allows you to use your favourite IDE 
 - `cd <this_repo>`
 - `vagrant up` then wait for Vagrant to finish provisioning the virtual machine
 - `vagrant ssh` to terminal into the virtual machine
+- Username `vagrant` password `vagrant`
 - `cd /vagrant`
 - `jekyll server --watch --force_polling --host 0.0.0.0` or `source /vagrant/runserver.sh` to start serving
 - browse to [http://localhost:8124](http://localhost:4000)
@@ -48,6 +49,7 @@ Assuming Vagrant is being used:
 
 - `vagrant up` to ensure the virtual machine is running
 - `vagrant ssh` to terminal into the virtual machine
+- Username `vagrant` password `vagrant`
 - `source ./runserver.sh` to start serving
 - browse to [http://localhost:8124](http://localhost:4000)
 
