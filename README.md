@@ -1,6 +1,6 @@
 # Technology Masters Website
 
-The official website for the #TechMasters Slack Group [techmasters.chat](http://techmasters.chat)
+The official website for the #TechMasters Slack Group [techmasters.chat](https://techmasters.chat)
 
 The site is published using [Jekyll](https://jekyllrb.com), a Ruby Gem that creates static
 pages that can be hosted anywhere.
