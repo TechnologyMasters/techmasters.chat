@@ -10,7 +10,12 @@ Vue.filter('prettyDate', function(value) {
     var months   = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
     var d = new Date(value);
-    return '' + weekdays[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate() + ' ' + d.getFullYear() + ' ' + d.getHours() + ':' + ('0' + d.getMinutes()).slice(-2);
+    var weekday     = weekdays[d.getDay()];
+    var month       = months[d.getMonth()];
+    var twelveHours = ((d.getHours() + 11) % 12 + 1);
+    var minutes     = ('0' + d.getMinutes()).slice(-2);
+    var period      = (d.getHours() >= 12 ? 'PM' : 'AM');
+    return '' + weekday + ', ' + month + ' ' + d.getDate() + ' ' + d.getFullYear() + ' ' + twelveHours + ':' + minutes + ' ' + period;
 });
 
 Vue.filter('googleMapUrl', function(value) {
@@ -49,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     getJson(url,
         function(data) {
+            // TODO: reverse order for descending dates
             vue.$data.events = data.items;
         },
         function(err) {
