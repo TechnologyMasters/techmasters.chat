@@ -7,8 +7,14 @@ title: Events
     <div class="calendar">
     </div>
 
-    <ul class="agenda">
-        <li v-for='event in events'>[[event.summary]]</li>
+    <ul class="agenda list-group">
+        <li v-for="event in events" class="list-group-item">
+            <h4><a :href="event.htmlLink" target="_blank">[[event.summary]]</a></h4>
+            <p>[[event.start.dateTime | prettyDate]]</p>
+            <p>[[event.location]]</p>
+            <p>[[event.description]]</p>
+            <a :href="event.htmlLink" target="_blank" class="btn">Add to Calendar</a>
+        </li>
     </ul>
 </div>
 

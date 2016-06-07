@@ -5,6 +5,14 @@ var calendarId = 'zamtools.com_sksehlk62uahqednpmvbp7isno@group.calendar.google.
 // change delimiters to not conflict with Jekyll templates
 Vue.config.delimiters = ['[[', ']]'];
 
+Vue.filter('prettyDate', function(value) {
+    var weekdays = ['Monday', 'Tuesday', 'Wedday', 'Thursday', 'Friday', 'Satday', 'Sunday'];
+    var months   = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    var d = new Date(value);
+    return '' + weekdays[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate() + ' ' + d.getFullYear();
+});
+
 var vue = new Vue({
     el: '#app',
     data: {
@@ -26,7 +34,6 @@ var getJson = function(url, success, failure) {
     };
 
     request.onerror = function(err) {
-        console.log('error');
         failure(err);
     };
 
