@@ -13,7 +13,7 @@ Vue.filter('prettyDate', function(value) {
     return '' + weekdays[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate() + ' ' + d.getFullYear() + ' ' + d.getHours() + ':' + ('0' + d.getMinutes()).slice(-2);
 });
 
-Vue.filter('googleMap', function(value) {
+Vue.filter('googleMapUrl', function(value) {
     return 'http://maps.google.com/?q=' + encodeURIComponent(value);
 });
 
@@ -47,8 +47,7 @@ var getJson = function(url, success, failure) {
 document.addEventListener('DOMContentLoaded', function() {
     var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + '/events?key=' + apiKey;
 
-    getJson(
-        url,
+    getJson(url,
         function(data) {
             vue.$data.events = data.items;
         },
