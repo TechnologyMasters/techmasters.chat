@@ -12,9 +12,7 @@ var vue = new Vue({
     }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + '/events?key=' + apiKey;
-
+var getJson = function(url, success, failure) {
     var request = new XMLHttpRequest();
     request.open('GET', url, true);
 
@@ -23,13 +21,28 @@ document.addEventListener('DOMContentLoaded', function() {
             var data = JSON.parse(this.response);
             console.log(data);
 
-            vue.$data.events = data.items;
+            success(data);
         }
     };
 
-    request.onerror = function() {
+    request.onerror = function(err) {
         console.log('error');
+        failure(err);
     };
 
     request.send();
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + '/events?key=' + apiKey;
+
+    getJson(
+        url,
+        function(data) {
+            vue.$data.events = data.items;
+        },
+        function(err) {
+            console.log('error', err);
+        }
+    );
 });
