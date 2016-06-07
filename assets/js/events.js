@@ -31,10 +31,11 @@
     });
 
     var getJson = function(url, params, success, failure) {
-        url += '?';
+        var pairs = [];
         for (var attr in params) {
-            url += attr + '=' + params[attr];
+            pairs.push(attr + '=' + params[attr]);
         }
+        url += '?' + pairs.join('&');
 
         var request = new XMLHttpRequest();
         request.open('GET', url, true);
@@ -55,7 +56,8 @@
     document.addEventListener('DOMContentLoaded', function() {
         var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + '/events';
         var params = {
-            key: apiKey
+            key: apiKey,
+            timeMin: (new Date()).toISOString()
         };
 
         getJson(url, params,
