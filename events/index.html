@@ -14,8 +14,8 @@ title: Events
                 <span class="start-time">[[event.start.dateTime | prettyDate]]</span>
                 <span class="end-time"> - [[event.end.dateTime | prettyDate]]</span>
             </p>
-            <p><a :href="event.location | googleMapUrl" target="_blank">[[event.location]]</a></p>
-            <p>[[event.description]]</p>
+            <p v-if="event.location"><a :href="event.location | googleMapUrl" target="_blank">[[event.location]]</a></p>
+            <p v-if="event.description">[[event.description]]</p>
             <p><a :href="event.htmlLink" target="_blank">Save to My Calendar</a></p>
         </li>
     </ul>

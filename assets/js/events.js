@@ -55,6 +55,7 @@
 
     document.addEventListener('DOMContentLoaded', function() {
         var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + '/events';
+        // TODO: maybe only use current day so events don't get truncated while they're running
         var params = {
             key: apiKey,
             timeMin: (new Date()).toISOString()
