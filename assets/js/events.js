@@ -35,8 +35,7 @@ var getJson = function(url, success, failure) {
 
     request.onload = function() {
         if (this.status >= 200 && this.status < 400) {
-            var data = JSON.parse(this.response);
-            success(data);
+            success(JSON.parse(this.response));
         }
     };
 
