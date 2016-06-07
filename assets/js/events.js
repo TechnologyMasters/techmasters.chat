@@ -31,6 +31,7 @@
     });
 
     var getJson = function(url, params, success, failure) {
+        // build parameter string
         var pairs = [];
         for (var attr in params) {
             pairs.push(attr + '=' + params[attr]);
