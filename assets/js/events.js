@@ -13,6 +13,10 @@ Vue.filter('prettyDate', function(value) {
     return '' + weekdays[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate() + ' ' + d.getFullYear();
 });
 
+Vue.filter('googleMap', function(value) {
+    return 'http://maps.google.com/?q=' + encodeURIComponent(value);
+});
+
 var vue = new Vue({
     el: '#app',
     data: {
