@@ -10,10 +10,13 @@ title: Events
     <ul class="agenda list-group">
         <li v-for="event in events" class="list-group-item">
             <h4><a :href="event.htmlLink" target="_blank">[[event.summary]]</a></h4>
-            <p>[[event.start.dateTime | prettyDate]]</p>
+            <p>
+                <span class="start-time">[[event.start.dateTime | prettyDate]]</span>
+                <span class="end-time"> - [[event.end.dateTime | prettyDate]]</span>
+            </p>
             <p><a :href="event.location | googleMap" target="_blank">[[event.location]]</a></p>
             <p>[[event.description]]</p>
-            <a :href="event.htmlLink" target="_blank" class="btn">Save to Your Calendar</a>
+            <p><a :href="event.htmlLink" target="_blank">Save to Your Calendar</a></p>
         </li>
     </ul>
 </div>
