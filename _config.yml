@@ -6,3 +6,5 @@ description: >
 
 # Build settings
 markdown: kramdown
+
+exclude: [scripts]
