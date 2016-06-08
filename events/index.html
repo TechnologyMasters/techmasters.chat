@@ -1,0 +1,27 @@
+---
+layout: page
+title: Events
+---
+
+<div id="app" v-cloak class="events">
+    <h4 class="text-right">Today is [[today | prettyDate]]</h4>
+
+    <ul class="agenda list-group">
+        <li v-for="event in events" class="list-group-item">
+            <h3>[[event.summary]]</h3>
+            <p>
+                <i class="fa fa-clock-o" aria-hidden="true"></i> 
+                <span class="start-time">[[event.start.dateTime | prettyDate]]</span>
+                <span> - </span>
+                <span class="end-time">[[event.end.dateTime | prettyDate]]</span>
+            </p>
+            <p v-if="event.location"><i class="fa fa-map-marker" aria-hidden="true"></i> <a :href="event.location | googleMapUrl" target="_blank">[[event.location]]</a></p>
+            <p><i class="fa fa-calendar" aria-hidden="true"></i> <a :href="event.htmlLink" target="_blank">Save to My Calendar</a></p>
+            <hr/>
+            <p v-if="event.description">[!!event.description!!]</p>
+        </li>
+    </ul>
+</div>
+
+<script src="/assets/js/vue.min.js"></script>
+<script src="/assets/js/events.js"></script>

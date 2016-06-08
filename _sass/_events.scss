@@ -1,0 +1,17 @@
+[v-cloak] {
+    display: none;
+}
+
+.agenda {
+    .fa {
+        width: 16px;
+
+        margin-right: 5px;
+        text-align: center;
+    }
+
+    .start-time, .end-time {
+        display: inline-block;
+        white-space: nowrap;
+    }
+}
