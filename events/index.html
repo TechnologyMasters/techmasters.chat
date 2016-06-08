@@ -13,7 +13,8 @@ title: Events
             <p>
                 <i class="fa fa-clock-o" aria-hidden="true"></i> 
                 <span class="start-time">[[event.start.dateTime | prettyDate]]</span>
-                <span class="end-time"> - [[event.end.dateTime | prettyDate]]</span>
+                <span> - </span>
+                <span class="end-time">[[event.end.dateTime | prettyDate]]</span>
             </p>
             <p v-if="event.location"><i class="fa fa-map-marker" aria-hidden="true"></i> <a :href="event.location | googleMapUrl" target="_blank">[[event.location]]</a></p>
             <p><i class="fa fa-calendar" aria-hidden="true"></i> <a :href="event.htmlLink" target="_blank">Save to My Calendar</a></p>
