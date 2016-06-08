@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# script/bootstrap: Resolve all dependencies that the application requires to run
+
+apt-get install software-properties-common
+apt-add-repository ppa:brightbox/ruby-ng
+apt-get update
+apt-get install -y zlib1g-dev
+apt-get install -y ruby2.2-dev
+apt-get install -y ruby2.2
+
+# installer bundler
+gem install bundler
+
+# change pwd
+cd /vagrant && bundle install
