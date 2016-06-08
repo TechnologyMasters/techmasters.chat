@@ -1,81 +1,80 @@
 ---
 # force evaluation of variables
 ---
-(function() {
-    // TODO: pass these in to an init function to remove the need for front matter in js
-    var apiKey     = '{{site.googleCalendar.apiKey}}';
-    var calendarId = '{{site.googleCalendar.calendarId}}';
 
-    // change delimiters to not conflict with Jekyll templates
-    Vue.config.delimiters = ['[[', ']]'];
-    Vue.config.unsafeDelimiters = ['[!!', '!!]'];
+// TODO: pass these in to an init function to remove the need for front matter in js
+var apiKey = {{ site.googleCalendar.apiKey | jsonify }}
+var calendarId = {{ site.googleCalendar.calendarId | jsonify }}
 
-    Vue.filter('prettyDate', function(value) {
-        var weekdays = ['Monday', 'Tuesday', 'Wedday', 'Thursday', 'Friday', 'Satday', 'Sunday'];
-        var months   = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+// change delimiters to not conflict with Jekyll templates
+Vue.config.delimiters = ['[[', ']]']
+Vue.config.unsafeDelimiters = ['[!!', '!!]']
 
-        var d = new Date(value);
-        var tzOffsetHours = d.getTimezoneOffset() / 60;
-        var weekday       = weekdays[d.getDay()];
-        var month         = months[d.getMonth()];
-        var twelveHours   = ((d.getHours() + 11) % 12 + 1);
-        var minutes       = ('0' + d.getMinutes()).slice(-2);
-        var period        = (d.getHours() >= 12 ? 'PM' : 'AM');
-        var timezone      = 'UTC' + (tzOffsetHours >= 0 ? '+' : '') + tzOffsetHours;
-        return '' + weekday + ', ' + month + ' ' + d.getDate() + ' ' + d.getFullYear() + ' ' + twelveHours + ':' + minutes + ' ' + period + ' ' + timezone;
-    });
+Vue.filter('prettyDate', function (value) {
+  var weekdays = ['Monday', 'Tuesday', 'Wedday', 'Thursday', 'Friday', 'Satday', 'Sunday']
+  var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
-    Vue.filter('googleMapUrl', function(value) {
-        return 'http://maps.google.com/?q=' + encodeURIComponent(value);
-    });
+  var d = new Date(value)
+  var tzOffsetHours = d.getTimezoneOffset() / 60
+  var weekday = weekdays[d.getDay()]
+  var month = months[d.getMonth()]
+  var twelveHours = ((d.getHours() + 11) % 12 + 1)
+  var minutes = ('0' + d.getMinutes()).slice(-2)
+  var period = (d.getHours() >= 12 ? 'PM' : 'AM')
+  var timezone = 'UTC' + (tzOffsetHours >= 0 ? '+' : '') + tzOffsetHours
+  return '' + weekday + ', ' + month + ' ' + d.getDate() + ' ' + d.getFullYear() + ' ' + twelveHours + ':' + minutes + ' ' + period + ' ' + timezone
+})
 
-    var vue = new Vue({
-        el: '#app',
-        data: {
-            events: [],
-            today: new Date()
-        }
-    });
+Vue.filter('googleMapUrl', function (value) {
+  return 'http://maps.google.com/?q=' + encodeURIComponent(value)
+})
 
-    var getJson = function(url, params, success, failure) {
-        // build parameter string
-        var pairs = [];
-        for (var attr in params) {
-            pairs.push(attr + '=' + params[attr]);
-        }
-        url += '?' + pairs.join('&');
+var vue = new Vue({
+  el: '#app',
+  data: {
+    events: [],
+    today: new Date()
+  }
+})
 
-        var request = new XMLHttpRequest();
-        request.open('GET', url, true);
+var getJson = function (url, params, success, failure) {
+  // build parameter string
+  var pairs = []
+  for (var attr in params) {
+    pairs.push(attr + '=' + params[attr])
+  }
+  url += '?' + pairs.join('&')
 
-        request.onload = function() {
-            if (this.status >= 200 && this.status < 400) {
-                success(JSON.parse(this.response));
-            }
-        };
+  var request = new XMLHttpRequest()
+  request.open('GET', url, true)
 
-        request.onerror = function(err) {
-            failure(err);
-        };
+  request.onload = function () {
+    if (this.status >= 200 && this.status < 400) {
+      success(JSON.parse(this.response))
+    }
+  }
 
-        request.send();
-    };
+  request.onerror = function (err) {
+    failure(err)
+  }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + '/events';
-        var params = {
-            key: apiKey,
-            timeMin: (new Date()).toISOString()
-        };
+  request.send()
+}
 
-        getJson(url, params,
-            function(data) {
-                vue.$data.events = data.items;
-            },
-            function(err) {
-                console.log('error', err);
-            }
-        );
-    });
-})();
+document.addEventListener('DOMContentLoaded', function () {
+  var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + '/events'
+  var params = {
+    key: apiKey,
+    timeMin: (new Date()).toISOString()
+  }
 
+  getJson(url, params,
+    function (data) {
+      vue.$data.events = data.items
+    },
+
+    function (err) {
+      console.log('error', err)
+    }
+  )
+})
