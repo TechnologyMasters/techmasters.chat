@@ -24,8 +24,26 @@ directory inside the virtual machine. This allows you to use your favourite IDE 
   - `git clone <this_repo>`
   - `cd <this_repo>`
   - `vagrant up` then wait for Vagrant to finish provisioning the virtual machine
-  - `vagrant exec server` to start serving
-  - browse to [http://localhost:4000](http://localhost:4000) using your favorite browser.
+
+#### Running Server
+
+To start serving the website
+
+```bash
+$ vagrant exec server
+```
+
+To ssh into the machine and serve the website *(Windows: you will need a valid SSH key setup with Vagrant)*:
+
+```bash
+$ vagrant ssh
+$ cd /vagrant
+$ server
+```
+ 
+*on Windows, you might need [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)*
+
+The website will be available on [http://localhost:4000](http://localhost:4000).
 
 ## Contributing
 

@@ -168,13 +168,11 @@ a.arrow-link {
   -webkit-transform: translate3d(0, 0, 0) !important;
   transform: translate3d(0, 0, 0) !important;
 }
-p.copyright {
-    font-size: 12px;
-    font-family: arial;
-    margin: 0px;
-    padding: 10px;
-    text-transform: uppercase;
+
+.footer-nav > * {
+  margin-right: 10px;
 }
+
 .innerPage {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -235,7 +233,17 @@ p.author {
 .whitebg { background: #fff !important}
 .innerPage h1 { color: #fff;}
 .channelsList p {line-height: 22px;}
-.footer {    background: #FBFBFB;}
+
+.footer {
+  margin: 0px;
+  padding: 10px;
+
+  font-size: 12px;
+  font-family: arial;
+  text-transform: uppercase;
+  background: #FBFBFB;
+}
+
 .channels { padding-bottom: 100px;}
 .channels hr { padding-bottom: 50px;}
 p.copyright span {float: right;}

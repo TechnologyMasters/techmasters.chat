@@ -7,4 +7,9 @@ description: >
 # Build settings
 markdown: kramdown
 
+# Google Calendar API settings
+googleCalendar:
+  apiKey: AIzaSyD3Y_GF0P3MSCWZKhkMQ0FrUfKUf07m4U4
+  calendarId: zamtools.com_sksehlk62uahqednpmvbp7isno@group.calendar.google.com
+
 exclude: [scripts]
