@@ -5,6 +5,7 @@
 
     // change delimiters to not conflict with Jekyll templates
     Vue.config.delimiters = ['[[', ']]'];
+    Vue.config.unsafeDelimiters = ['[!!', '!!]'];
 
     Vue.filter('prettyDate', function(value) {
         var weekdays = ['Monday', 'Tuesday', 'Wedday', 'Thursday', 'Friday', 'Satday', 'Sunday'];

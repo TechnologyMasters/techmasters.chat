@@ -19,7 +19,7 @@ title: Events
             <p v-if="event.location"><i class="fa fa-map-marker" aria-hidden="true"></i> <a :href="event.location | googleMapUrl" target="_blank">[[event.location]]</a></p>
             <p><i class="fa fa-calendar" aria-hidden="true"></i> <a :href="event.htmlLink" target="_blank">Save to My Calendar</a></p>
             <hr/>
-            <p v-if="event.description">[[event.description]]</p>
+            <p v-if="event.description">[!!event.description!!]</p>
         </li>
     </ul>
 </div>
