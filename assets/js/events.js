@@ -1,7 +1,10 @@
+---
+# force evaluation of variables
+---
 (function() {
-    // TODO: make this a config
-    var apiKey     = 'AIzaSyD3Y_GF0P3MSCWZKhkMQ0FrUfKUf07m4U4';
-    var calendarId = 'zamtools.com_sksehlk62uahqednpmvbp7isno@group.calendar.google.com';
+    // TODO: pass these in to an init function to remove the need for front matter in js
+    var apiKey     = '{{site.googleCalendar.apiKey}}';
+    var calendarId = '{{site.googleCalendar.calendarId}}';
 
     // change delimiters to not conflict with Jekyll templates
     Vue.config.delimiters = ['[[', ']]'];
