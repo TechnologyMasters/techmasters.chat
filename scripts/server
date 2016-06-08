@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# script/server: Launch the application and any extra required processes
-#                locally.
-
-cd /vagrant && bundle exec jekyll serve --watch --host 0.0.0.0 --force_polling

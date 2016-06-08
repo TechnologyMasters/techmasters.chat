@@ -15,6 +15,6 @@ gem install bundler
 # change pwd
 cd /vagrant && bundle install
 
-echo "bundle exec jekyll serve --watch --host 0.0.0.0 --force_polling" > /usr/local/bin/server
+echo "bundle exec jekyll serve --host 0.0.0.0 --force_polling" > /usr/local/bin/server
 
 chmod +x /usr/local/bin/server

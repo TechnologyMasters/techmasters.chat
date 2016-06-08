@@ -29,7 +29,7 @@ directory inside the virtual machine. This allows you to use your favourite IDE 
 
 - `vagrant ssh` to terminal into the virtual machine (this won't work on Windows, install [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) instead)
 - `cd /vagrant` to navigate to the shared directory
-- `sh /vagrant/scripts/server` to start serving from inside the virtual machine
+- `server` to start serving from inside the virtual machine
 - `vagrant exec server` to start serving from outside (you will need a valid SSH key setup with Vagrant)
 - browse to [http://localhost:4000](http://localhost:4000) using your favorite browser.
 
