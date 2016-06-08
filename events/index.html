@@ -4,8 +4,8 @@ title: Events
 ---
 
 <div id="app" v-cloak class="events">
-    <div class="calendar">
-    </div>
+    <h4>Today is [[today | prettyDate]]</h4>
+    <br/>
 
     <ul class="agenda list-group">
         <li v-for="event in events" class="list-group-item">

@@ -30,7 +30,8 @@
     var vue = new Vue({
         el: '#app',
         data: {
-            events: []
+            events: [],
+            today: new Date()
         }
     });
 
