@@ -1,1 +1,0 @@
-jekyll server --source /vagrant --destination /vagrant/_site --watch --host 0.0.0.0 --force_polling
