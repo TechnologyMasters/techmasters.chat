@@ -16,7 +16,6 @@
 
         var d = new Date(value);
         var tzOffsetHours = d.getTimezoneOffset() / 60;
-        d.setMinutes(d.getMinutes() + d.getTimezoneOffset());
         var weekday       = weekdays[d.getDay()];
         var month         = months[d.getMonth()];
         var twelveHours   = ((d.getHours() + 11) % 12 + 1);
