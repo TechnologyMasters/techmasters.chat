@@ -19,14 +19,19 @@ forward port `4000` to your host OS and synchronize the repository directory wit
 directory inside the virtual machine. This allows you to use your favourite IDE on your host OS.
 
 - Install [Vagrant](https://www.vagrantup.com/)
+- install [Vagrant Exec](https://github.com/p0deje/vagrant-exec): `vagrant plugin install vagrant-exec`
 - Open a terminal (`cmd` on Windows)
   - `git clone <this_repo>`
   - `cd <this_repo>`
   - `vagrant up` then wait for Vagrant to finish provisioning the virtual machine
-  - `vagrant ssh` to terminal into the virtual machine (this won't work on Windows, install [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) instead)
-  - `cd /vagrant` to navigate to the shared directory
-  - `sh /vagrant/scripts/server` to start serving
-  - browse to [http://localhost:4000](http://localhost:4000) using your favorite browser.
+
+# Running Server
+
+- `vagrant ssh` to terminal into the virtual machine (this won't work on Windows, install [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) instead)
+- `cd /vagrant` to navigate to the shared directory
+- `sh /vagrant/scripts/server` to start serving from inside the virtual machine
+- `vagrant exec server` to start serving from outside (you will need a valid SSH key setup with Vagrant)
+- browse to [http://localhost:4000](http://localhost:4000) using your favorite browser.
 
 ## Contributing
 
