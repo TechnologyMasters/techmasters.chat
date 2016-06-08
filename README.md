@@ -1,68 +1,32 @@
-# Technology Masters Website
+# Technology Masters [Website][website]
 
-The official website for the #TechMasters Slack Group [techmasters.chat](https://techmasters.chat)
+The official website for the [**#TechMasters**][website] Slack Group's website: [TechMasters.chat][website]
 
-The site is published using [Jekyll](https://jekyllrb.com), a Ruby Gem that creates static
-pages. This are hosted on [GitHub Pages](https://pages.github.com/).
+The site is published using [Jekyll](https://jekyllrb.com), and hosted on [GitHub Pages](https://help.github.com/articles/about-github-pages-and-jekyll/).
 
 ## Installation
 
-The Vagrant installation is the easiest approach because it requires fewer steps, ensures the 
-correct version of all the dependencies, doesn't require NVM and won't clutter your system.
+You can set up a local version of the site to test changes. We highly recommend installing Jekyll to preview and help troubleshoot failed builds.
+
+Follow the [detailed instructions](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/) provided by Github for local setup.
 
 ### Vagrant Installation
 
+If you're running a Windows OS, the Vagrant installation is the easiest approach.
+
 Vagrant will create a virtual machine, provision it with Jekyll and all its dependencies, 
-forward port 4000 to your host OS and synchronize the repository directory with a `/vagrant` 
+forward port `4000` to your host OS and synchronize the repository directory with a `/vagrant` 
 directory inside the virtual machine. This allows you to use your favourite IDE on your host OS.
 
-- Install VirtualBox
-- Install Vagrant
-- Open a terminal (cmd on Windows)
-- `git clone <this_repo>`
-- `cd <this_repo>`
-- `vagrant up` then wait for Vagrant to finish provisioning the virtual machine
-- `vagrant ssh` to terminal into the virtual machine
-- Username `vagrant` password `vagrant`
-- `cd /vagrant`
-- `jekyll server --watch --force_polling --host 0.0.0.0` or `source /vagrant/runserver.sh` to start serving
-- browse to [http://localhost:8124](http://localhost:4000)
-
-### Manual Installation
-
-It is recommended that you use RVM to isolate this Ruby installation from others that
-may be on your system.
-
-- [Install Ruby 2.0+](https://www.ruby-lang.org/en/documentation/installation/)
-- [Install RVM](https://rvm.io/)
-- [Install NodeJS](https://nodejs.org/en/download/)
-- `sudo apt-get install gcc make` (this won't work on Windows)
-- Switch NVM environments **(needs instructions)**
-- `sudo gem install jekyll --no-rdoc --no-ri`
-- `sudo gem install github-pages --no-rdoc --no-ri`
-- `jekyll serve -w --force_polling` or `source ./runserver.sh` to start serving
-- browse to [http://localhost:8124](http://localhost:4000)
-
-## Usage
-
-Assuming Vagrant is being used:
-
-- `vagrant up` to ensure the virtual machine is running
-- `vagrant ssh` to terminal into the virtual machine
-- Username `vagrant` password `vagrant`
-- `source ./runserver.sh` to start serving
-- browse to [http://localhost:8124](http://localhost:4000)
-
-Jekyll will watch for changes and update the trigger a rebuild.
-
-**NOTE:** The `--force_polling` flag on Jekyll serve is required by some host operating systems (Windows) in order to 
-overcome a VirtualBox "sendfile" bug. Without it, changes to files won't trigger the watcher to rebuild.
-
-Visit the [Jekyll Documentation](https://jekyllrb.com/docs/home/) for information on how to modify pages and settings.
-
-## Deployment
-
-Simply push to GitHub and GitHub Pages will automatically build.
+- Install [Vagrant](https://www.vagrantup.com/)
+- Open a terminal (`cmd` on Windows)
+  - `git clone <this_repo>`
+  - `cd <this_repo>`
+  - `vagrant up` then wait for Vagrant to finish provisioning the virtual machine
+  - `vagrant ssh` to terminal into the virtual machine
+  - `cd /vagrant`
+  - `sh scripts/server` to start serving
+  - browse to [http://localhost:4000](http://localhost:4000) using your favorite browser.
 
 ## Contributing
 
@@ -80,6 +44,12 @@ Simply push to GitHub and GitHub Pages will automatically build.
 - Please maintain the same the same code style as the rest of the code base.
 - One pull request per feature.
 
+## Deployment
+
+Simply push to GitHub and GitHub Pages will automatically build *(assuming your pull request is approved)*
+
 ## License
 
 The MIT License (MIT). See [LICENSE](./LICENSE) for more details.
+
+[website]: https://techmasters.chat
