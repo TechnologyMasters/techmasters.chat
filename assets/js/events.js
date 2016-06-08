@@ -11,7 +11,7 @@ Vue.config.delimiters = ['[[', ']]']
 Vue.config.unsafeDelimiters = ['[!!', '!!]']
 
 Vue.filter('prettyDate', function (value) {
-  var weekdays = ['Monday', 'Tuesday', 'Wedday', 'Thursday', 'Friday', 'Satday', 'Sunday']
+  var weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
   var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
   var d = new Date(value)
