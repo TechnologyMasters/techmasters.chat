@@ -25,13 +25,25 @@ directory inside the virtual machine. This allows you to use your favourite IDE 
   - `cd <this_repo>`
   - `vagrant up` then wait for Vagrant to finish provisioning the virtual machine
 
-# Running Server
+#### Running Server
 
-- `vagrant ssh` to terminal into the virtual machine (this won't work on Windows, install [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) instead)
-- `cd /vagrant` to navigate to the shared directory
-- `server` to start serving from inside the virtual machine
-- `vagrant exec server` to start serving from outside (you will need a valid SSH key setup with Vagrant)
-- browse to [http://localhost:4000](http://localhost:4000) using your favorite browser.
+To start serving the website
+
+```bash
+$ vagrant exec server
+```
+
+To ssh into the machine and serve the website *(Windows: you will need a valid SSH key setup with Vagrant)*:
+
+```bash
+$ vagrant ssh
+$ cd /vagrant
+$ server
+```
+ 
+*on Windows, you might need [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)*
+
+The website will be available on [http://localhost:4000](http://localhost:4000).
 
 ## Contributing
 
