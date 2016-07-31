@@ -7,8 +7,19 @@
     @content;
   }
 }
+@mixin mid-screen {
+   @media (min-width: 700px) {
+     @content;
+   }
+ }
 @mixin narrow-screen {
   @media (max-width: 500px) {
+    @content;
+  }
+}
+@mixin small-screen {
+  //4-inch phones are making a comeback
+  @media (min-width: 384px) {
     @content;
   }
 }
@@ -20,18 +31,19 @@ body {
   font-smoothing: antialiased;
   font-family: 'Raleway',Helvetica,sans-serif;
   font-size: 22px;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 300ms;
+  transition: 300ms;
 }
 
 .hero{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
   background: #5C258D;
   background: -webkit-linear-gradient(to left, #5C258D, #4389A2);
   background: -webkit-linear-gradient(right, #5C258D, #4389A2);
   background: linear-gradient(to left, #5C258D, #4389A2);
-  min-height: 100vh;
-  height: auto;
-  position: relative;
   color: #fff;
   @include large-screen {
     height: 100vh;
@@ -52,6 +64,8 @@ body {
   }
 
   .row {
+    display: inline-block;
+    width: 100%;
     margin: 0 auto;
     @include large-screen {
       position: absolute;
@@ -60,6 +74,16 @@ body {
       width: auto;
       top: 50%;
       @include trans(0,-50%);
+    }
+  }
+
+  .logo img {
+    width: 95px;
+    height: auto;
+    transition: width 0.3s, height 0.3s;
+
+    @include mid-screen {
+      width: 140px;
     }
   }
 
@@ -103,69 +127,52 @@ canvas {
 
 .hero a { color: #fff;}
 
-.heroimg
-{
+.heroimg {
   max-height: 400px;
   text-align: center;
   margin: 0 auto;
-<<<<<<< 8678b90e71e1fc059f79e91940f2fc61323b3034
-=======
   padding-top: 1px;
   width: 100%;
   padding: 0;
->>>>>>> Makes hero area responsive
 }
 
 .middle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-          transform: translate(-50%,-50%);
+  position: relative;
+  margin: 0 auto;
   width: 100%;
-    max-width: 750px;
+  padding: 0;
 }
 
-.intro { background: #FBFBFB;}
-.btn-round
-{
+.intro {
+  background: #FBFBFB;
+}
+.btn-round {
   border-radius: 20px;
   border: 2px solid #fff;
   color: #fff;
   padding: 10px 35px 10px 35px;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
 }
 .btn-round:hover {
   background: #fff;
   color: #000;
-  -webkit-transition: .3s;
-  transition: .3s;
 }
 .arrow {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  position: relative;
   width: 40px;
   height: 40px;
-<<<<<<< 8678b90e71e1fc059f79e91940f2fc61323b3034
-  background-image: url('/assets/images/arrow.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-=======
   margin: 0 auto;
   bottom: 0;
   background-image: url("/assets/images/arrow.png");
   background-repeat: no-repeat;
   background-size: contain;
-  @include large-screen {
-    position: absolute;
-    left: 50%;
-    @include trans(-50%, 0);
-  }
-  }
+  // @include large-screen {
+  //   position: absolute;
+  //   left: 50%;
+  //   @include trans(-50%, 0);
+  // }
+}
 
 .__slackin {
   display: block;
@@ -174,7 +181,6 @@ canvas {
   @include narrow-screen {
     margin: 1em auto;
   }
->>>>>>> Makes hero area responsive
 }
 
 .bounce {
@@ -260,12 +266,6 @@ a.arrow-link {
   transform: translate3d(0, 0, 0) !important;
 }
 
-<<<<<<< 8678b90e71e1fc059f79e91940f2fc61323b3034
-.footer-nav > * {
-  margin-right: 10px;
-}
-
-=======
 /* Footer Area */
 .join {
   iframe {
@@ -281,7 +281,6 @@ p.copyright {
 }
 
 /* Inner Pages */
->>>>>>> Makes hero area responsive
 .innerPage {
   padding-top: 30px;
   padding-bottom: 30px;
