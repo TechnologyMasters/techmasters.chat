@@ -167,11 +167,11 @@ canvas {
   background-image: url("/assets/images/arrow.png");
   background-repeat: no-repeat;
   background-size: contain;
-  // @include large-screen {
-  //   position: absolute;
-  //   left: 50%;
-  //   @include trans(-50%, 0);
-  // }
+  @include large-screen {
+    position: absolute;
+    left: 50%;
+    @include trans(-50%, 0);
+  }
 }
 
 .__slackin {
