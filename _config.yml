@@ -13,3 +13,6 @@ googleCalendar:
   calendarId: zamtools.com_sksehlk62uahqednpmvbp7isno@group.calendar.google.com
 
 exclude: [scripts]
+
+gems:
+  - jekyll-redirect-from
