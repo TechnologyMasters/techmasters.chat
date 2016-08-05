@@ -21,6 +21,8 @@ Here is a video that captures the essence of Fireside Conference.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Hck6VhX-KF4" frameborder="0" allowfullscreen></iframe>
 
-#firesideconf 2016 will be the official TechMasters retreat of the year, and a great opportunity to have an intimate weekend with speaker sessions around campfires while roasting marshmallows and discussing ideas that change the world.
+\#firesideconf 2016 will be the official TechMasters retreat of the year, and a great opportunity to have an intimate weekend with speaker sessions around campfires while roasting marshmallows and discussing ideas that change the world.
 
 The [#firesideconf](http://www.firesideconf.com) team is able to put together some special pricing for us. Tickets are typically $849 but are available to this group for $525 each if we are able to fill a cabin of 12-16 people. Tickets are all inclusive of your conference ticket, food (lots!), open bar (mmm), accommodations, and all camp activities (waterskiing, ropes, sports, etc).
+
+###[Apply & Buy Now!](http://uv.rs/2arrUOY)
