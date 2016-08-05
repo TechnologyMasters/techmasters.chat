@@ -1,6 +1,6 @@
 ---
 layout: page
-title: #firesideconf
+title: "#firesideconf"
 ---
 
 ![](http://www.firesideconf.com/wp-content/uploads/2016/03/fsc_logo_2016@2x.png)
