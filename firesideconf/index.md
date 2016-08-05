@@ -25,4 +25,4 @@ Here is a video that captures the essence of Fireside Conference.
 
 The [#firesideconf](http://www.firesideconf.com) team is able to put together some special pricing for us. Tickets are typically $849 but are available to this group for $525 each if we are able to fill a cabin of 12-16 people. Tickets are all inclusive of your conference ticket, food (lots!), open bar (mmm), accommodations, and all camp activities (waterskiing, ropes, sports, etc).
 
-###[Apply & Buy Now!](http://uv.rs/2arrUOY)
+### [Apply & Buy Now!](http://uv.rs/2arrUOY)
