@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Code of Conduct
+redirect_from: "/coc"
 ---
 
 Last modified: July 18, 2016
