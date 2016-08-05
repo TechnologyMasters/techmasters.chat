@@ -1,11 +1,11 @@
 ---
 layout: page
-title: firesideconf
+title: #firesideconf
 ---
 
-# TechMasters Goes to Summer Camp!
-
 ![](http://www.firesideconf.com/wp-content/uploads/2016/03/fsc_logo_2016@2x.png)
+
+# TechMasters Goes to Summer Camp!
 
 The [Fireside Conference](http://www.firesideconf.com) team has provided a great opportunity for the #TechMasters community to join in on the festivities at #firesideconf this year.
 
