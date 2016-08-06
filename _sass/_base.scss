@@ -89,6 +89,14 @@ body {
 
   .hero-buttons {
     margin-bottom: 4rem;
+
+    @include mid-screen {
+      margin-bottom: 7rem;
+    }
+
+    .btn {
+      margin-bottom: 1rem;
+    }
   }
 
   .row:before, .row:after,
@@ -149,6 +157,23 @@ canvas {
 
 .intro {
   background: #FBFBFB;
+
+  .biglogo {
+    img {
+      max-width: 100%;
+    }
+  }
+  a {
+    img {
+      outline: solid 2px rgba(51,122,183,0);
+      transition: outline 300ms;
+    }
+  }
+  a:hover {
+    img {
+      outline: solid 2px rgba(51,122,183,0.7);
+    }
+  }
 }
 .btn-round {
   border-radius: 20px;
@@ -243,7 +268,7 @@ a.arrow-link {
   width: 40px;
 }
 
-.logos img { max-width: 150px; max-widht: 150px;}
+.logos img { max-width: 150px;}
 .pace {
   -webkit-pointer-events: none;
   pointer-events: none;
@@ -354,9 +379,14 @@ p.author {
   font-family: arial;
   text-transform: uppercase;
   background: #FBFBFB;
-}
-.footer-nav a {
-  margin-right: 20px;
+
+  p {
+    padding: 10px;
+  }
+  a {
+    display: inline-block;
+    margin-right: 20px;
+  }
 }
 
 .channels { padding-bottom: 100px;}
