@@ -11,13 +11,11 @@ layout: default
         <h1 class="title">#TechMasters</h1>
         <p class="slogan">{{ site.description }}</p>
 
-        <a id="joinBtn" class="btn btn-round" href="#join">Join Now</a>
-        <a class="btn btn-round" href="https://techmasters.slack.com/">Sign in</a>
-        <a class="btn btn-round" href="https://medium.com/tech-masters/">Blog</a>
-
-        <br/>
-        <br/>
-        <br/>
+        <div class="hero-buttons">
+          <a id="joinBtn" class="btn btn-round" href="#join">Join Now</a>
+          <a class="btn btn-round" href="https://techmasters.slack.com/">Sign in</a>
+          <a class="btn btn-round" href="https://medium.com/tech-masters/">Blog</a>
+        </div>
 
         <script async defer src="https://technologymasters.herokuapp.com/slackin.js?large"></script>
       </div>
@@ -28,29 +26,6 @@ layout: default
 
 <section class="intro" id="maincontent">
   <div class="container">
-    <!--
-    <h1 class="text-center">Passionate Technologists</h1>
-
-    <hr/>
-
-    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-
-    <div class="row">
-      <div class="col-lg-12">
-        <ul class="list-inline text-center founders">
-          {% for member in site.data.members %}
-            <li>
-              <figure>
-                <img src="https://www.ahmadnassri.com/assets/images/avatar.jpg" alt="{{ member.name }}">
-                <p class="caption">{{ member.name }}</p>
-              </figure>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-    -->
-
     <h1 class="text-center">Official Community Channel</h1>
 
     <hr/>
@@ -64,47 +39,9 @@ layout: default
           <li><a href="https://fsto.co/" target="_blank"><img src="/assets/images/fsto.png" alt="FullStack Toronto"></a></li>
           <li><a href="http://www.devto.ca/"><img src="/assets/images/devto.png" alt="DevTO"></a></li>
         </ul>
-        <div class="text-center"><a href="http://www.firesideconf.com/"><img src="http://www.firesideconf.com/wp-content/uploads/2016/03/fsc_logo_2016@2x.png" alt="Firesideconf"></a></div>
+        <div class="text-center biglogo"><a href="/firesideconf"><img src="http://www.firesideconf.com/wp-content/uploads/2016/03/fsc_logo_2016@2x.png" alt="Firesideconf"></a></div>
       </div>
     </div>
-
-    <!--
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <div class="quote"><i class="fa fa-quote-left fa-4x"></i></div>
-
-        <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="7000">
-
-          <ol class="carousel-indicators">
-            <li data-target="#fade-quote-carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
-            <li data-target="#fade-quote-carousel" data-slide-to="2"></li>
-          </ol>
-
-          <div class="carousel-inner">
-            <div class="active item">
-              <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
-              </blockquote>
-              <p class="author">Ahmad Nassri</p>
-            </div>
-            <div class="item">
-              <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
-              </blockquote>
-              <p class="author">Amanullah</p>
-            </div>
-            <div class="item">
-              <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, veritatis nulla eum laudantium totam tempore optio doloremque laboriosam quas, quos eaque molestias odio aut eius animi. Impedit temporibus nisi accusamus.</p>
-              </blockquote>
-              <p class="author">Ahmad Nassri</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    -->
 
     <div class="channels">
       <div class="row">
