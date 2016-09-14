@@ -60,7 +60,7 @@ body {
       left: 50%;
       @include trans(-50%,0);
     }
-    
+
   }
 
   .row {
@@ -297,6 +297,8 @@ a.arrow-link {
 
 /* Footer Area */
 .join {
+  background-color: #FBFBFB;
+
   iframe {
     overflow: hidden;
   }
