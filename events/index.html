@@ -10,7 +10,7 @@ title: Events
         <li v-for="event in events" class="list-group-item">
             <h3>[[event.summary]]</h3>
             <p>
-                <i class="fa fa-clock-o" aria-hidden="true"></i> 
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
                 <span class="start-time">[[event.start.dateTime | prettyDate]]</span>
                 <span> - </span>
                 <span class="end-time">[[event.end.dateTime | prettyDate]]</span>
@@ -19,6 +19,9 @@ title: Events
             <p><i class="fa fa-calendar" aria-hidden="true"></i> <a :href="event.htmlLink" target="_blank">Save to My Calendar</a></p>
             <hr/>
             <p v-if="event.description">[!!event.description!!]</p>
+        </li>
+        <li class="list-group-item noevents">
+          No upcoming events
         </li>
     </ul>
 </div>
