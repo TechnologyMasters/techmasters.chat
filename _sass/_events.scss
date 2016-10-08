@@ -3,6 +3,10 @@
 }
 
 .agenda {
+    &.list-group {
+        padding-left: 0;
+    }
+
     .fa {
         width: 16px;
 
@@ -13,5 +17,11 @@
     .start-time, .end-time {
         display: inline-block;
         white-space: nowrap;
+    }
+
+    .noevents {
+      &:not(:first-child) {
+        display: none;
+      }
     }
 }
