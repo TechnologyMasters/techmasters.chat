@@ -19,7 +19,7 @@
         white-space: nowrap;
     }
 
-    .noevents {
+    .no-events {
       &:not(:first-child) {
         display: none;
       }
