@@ -2,7 +2,7 @@
 <html>
   {% include head.html %}
 
-  <body>
+  <body class="page-{{ page.title | slugify }}">
     {% include header.html %}
 
     {{ content }}
