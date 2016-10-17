@@ -75,6 +75,7 @@ If you are being harassed, notice that someone else is being harassed, or have o
 
 * **Ahmad Nassri** - Contact [@ahmadnassri on Slack](https://techmasters.slack.com/messages/@ahmadnassri).
 * **Andrew Moore** - Contact [@awmoore on Slack](https://techmasters.slack.com/messages/@awmoore) or [by email](http://www.google.com/recaptcha/mailhide/d?k=01a1e0Lq3Dpb2-lbWqjGcB5w==&c=jx3c5YpJM4u8FXIh0fmcE-OD2pxTbyMn0ES0KrcRlZk=).
+* **Jasna Todorovic** - Contact [@jasna on Slack](https://techmasters.slack.com/messages/@jasna)
 * View the rest of our Admins by navigating to the [Team page](https://techmasters.slack.com/team) and clicking "view admins" at the top.
 
 Thanks for following this Code of Conduct and joining the TechMasters community!
