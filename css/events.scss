@@ -1,0 +1,47 @@
+---
+---
+@charset "utf-8";
+
+@import "base", "layout";
+
+[v-cloak] {
+  display: none;
+}
+
+.tm-card-event {
+  > .mdl-card__actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
+  }
+
+  .mdl-chip__contact {
+    .material-icons {
+      line-height: 32px;
+    }
+  }
+}
+
+.agenda {
+  &.list-group {
+    padding-left: 0;
+  }
+
+  .fa {
+    width: 16px;
+
+    margin-right: 5px;
+    text-align: center;
+  }
+
+  .start-time, .end-time {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .no-events {
+    &:not(:first-child) {
+      display: none;
+    }
+  }
+}

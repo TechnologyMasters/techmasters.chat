@@ -1,5 +1,4 @@
 ---
-# force evaluation of variables
 ---
 
 // TODO: pass these in to an init function to remove the need for front matter in js
@@ -11,7 +10,7 @@ Vue.config.delimiters = ['[[', ']]']
 Vue.config.unsafeDelimiters = ['[!!', '!!]']
 
 Vue.filter('prettyDate', function (value) {
-  var weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+  var weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
   var d = new Date(value)
@@ -22,7 +21,7 @@ Vue.filter('prettyDate', function (value) {
   var minutes = ('0' + d.getMinutes()).slice(-2)
   var period = (d.getHours() >= 12 ? 'PM' : 'AM')
   var timezone = 'UTC' + (tzOffsetHours >= 0 ? '+' : '') + tzOffsetHours
-  return '' + weekday + ', ' + month + ' ' + d.getDate() + ' ' + d.getFullYear() + ' ' + twelveHours + ':' + minutes + ' ' + period + ' ' + timezone
+  return '' + weekday + ', ' + month + ' ' + d.getDate() + ' @ ' + twelveHours + ':' + minutes + ' ' + period + ' ' + timezone
 })
 
 Vue.filter('googleMapUrl', function (value) {
@@ -32,14 +31,14 @@ Vue.filter('googleMapUrl', function (value) {
 var vue = new Vue({
   el: '#app',
   data: {
-    events: [],
-    today: new Date()
+    events: []
   }
 })
 
 var getJson = function (url, params, success, failure) {
   // build parameter string
   var pairs = []
+
   for (var attr in params) {
     pairs.push(attr + '=' + params[attr])
   }

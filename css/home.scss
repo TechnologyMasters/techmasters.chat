@@ -1,0 +1,85 @@
+---
+---
+@charset "utf-8";
+
+@import "base", "layout";
+
+.tm-hero {
+  margin-bottom: 80px;
+
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.tm-card-channel {
+  &:before {
+    content: '';
+    height: 176px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  > .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background-color: rgba(103,58,183, .4);
+  }
+
+   > .mdl-card__actions {
+    display: flex;
+    box-sizing:border-box;
+    align-items: center;
+  }
+}
+
+.tm-card-channel--general {
+  &:before {
+    background: url('/assets/images/channels/general.jpg') center / cover;
+  }
+}
+
+.tm-card-channel--business {
+  &:before {
+    background: url('/assets/images/channels/business.jpg') center / cover;
+  }
+}
+
+.tm-card-channel--jobs {
+  &:before {
+    background: url('/assets/images/channels/jobs.jpg') center / cover;
+  }
+}
+
+.tm-card-channel--debugging {
+  &:before {
+    background: url('/assets/images/channels/debugging.jpg') center / cover;
+  }
+}
+
+.tm-card-channel--technology {
+  &:before {
+    background: url('/assets/images/channels/technology.jpg') center / cover;
+  }
+}
+
+.tm-card-channel--science {
+  &:before {
+    background: url('/assets/images/channels/science.jpg') center / cover;
+  }
+}
+
+.tm-card-partner {
+  > .mdl-card__title {
+    height: 176px;
+    justify-content: center;
+
+    img {
+      width: 90%;
+    }
+  }
+}

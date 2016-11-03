@@ -1,8 +1,7 @@
 # Site settings
 url: https://techmasters.chat
-title: Technology Masters
-description: >
-  An online community tying together a diverse and passionate group of technologists, entrepreneurs, and developers from all around the world.
+title: "#TechMasters"
+description: Connect with fellow Technologists &amp; Founders, Get help with coding problems, Discuss your startup goals and Learn new skills
 
 # Build settings
 markdown: kramdown

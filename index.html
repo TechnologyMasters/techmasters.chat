@@ -1,91 +1,84 @@
 ---
-layout: default
+layout: home
+
+channels:
+  - title: General
+    description: >
+      A place to meet other Masters of their respective Tech fields, to introduce themselves and discuss topics that don't quite fit in the other channels
+
+  - title: Business
+    description: >
+      Business Strategy, Business News, and Business Intelligence... If it has anything to do with Business, this is the place to talk about it!
+
+  - title: Jobs
+    description: >
+      Is your company hiring? Do you want to be hired? Post your jobs and requests here! Don't forget to invite anyone to this channel who is looking or posting
+
+  - title: Technology
+    description: >
+      As Arthur C. Clarke once said, "Any sufficiently advanced technology is indistinguishable from magic." ... But we Tech Masters know better, don't we?
+
+  - title: Debugging
+    description: >
+      When #programming questions get too detailed, use this channel to cut the noise and do 1:1 debugging with other Masters.
+
+  - title: Science
+    description: >
+      Edward Teller once said, "The #science of today is the #technology of tomorrow." Let's talk about the things that will amaze us tomorrow!
+
+partners:
+  - name: "#DevTO"
+    logo: devto
+
+  - name: Full Stack Toronto
+    logo: fsto
+
+  - name: Fireside Conf
+    logo: fireside
+
+  - name: Product Hunt Toronto
+    logo: producthuntto
 ---
 
-<section class="hero">
-  <div id="particles-js"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center middle">
-        <div class="logo"><img src="/assets/images/logo.png" height="174" width="140" alt="Tech Masters"></div>
-        <h1 class="title">#TechMasters</h1>
-        <p class="slogan">{{ site.description }}</p>
-
-        <div class="hero-buttons">
-          <a id="joinBtn" class="btn btn-round" href="#join">Join Now</a>
-          <a class="btn btn-round" href="https://techmasters.slack.com/">Sign in</a>
-          <a class="btn btn-round" href="https://blog.techmasters.chat/">Blog</a>
-        </div>
-
-        <script async defer src="https://technologymasters.herokuapp.com/slackin.js?large"></script>
-      </div>
-    </div>
+<div class="tm-container mdl-grid">
+  <div class="tm-hero mdl-color-text--white mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop">
+    <h2 class="mdl-typography--text-center">{{ site.description }}</h2>
   </div>
-  <div class="arrow bounce"><a href="#maincontent" class="arrow-link"></a></div>
-</section>
 
-<section class="intro" id="maincontent">
-  <div class="container">
-    <h1 class="text-center">Official Community Channel</h1>
-
-    <hr/>
-
-    <p class="text-center">#TechMasters is the official community chat channel for:</p>
-
-    <div class="row">
-      <div class="col-lg-12">
-        <ul class="list-inline text-center logos">
-          <li><a href="https://fsto.co/" target="_blank"><img src="/assets/images/fsto.png" alt="FullStack Toronto"></a></li>
-          <li><a href="http://www.devto.ca/"><img src="/assets/images/devto.png" alt="DevTO"></a></li>
-          <li><a href="/firesideconf"><img src="/assets/images/fireside.png" alt="Firesideconf"></a></li>
-          <li><a href="http://producthunttoronto.com/"><img src="/assets/images/producthunttoronto.png" alt="ProductHuntTO"></a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="channels">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1 class="text-center">Rich Channels &amp; Discussions</h1>
-          <hr>
-        </div>
-      </div>
-      <div class="row channelsList">
-        <div class="col-lg-4">
-          <h3>#General</h3>
-          <p class="desc">The general channel is a place for Tech Masters to meet others Masters of their respective Tech fields, and to introduce themselves and discuss topics that don't quite fit in the other channels</p>
-        </div>
-        <div class="col-lg-4">
-          <h3>#Business</h3>
-          <p class="desc">Business Strategy, Business News, and Business Intelligence... If it has anything to do with Business, this is the place to talk about it! </p>
-        </div>
-        <div class="col-lg-4">
-          <h3>#Jobs</h3>
-          <p class="desc">Is your company hiring? Do you want to be hired? Post your jobs and requests here! Don't forget to /invite anyone to this channel who is looking or posting</p>
-        </div>
-      </div>
-      <div class="row channelsList">
-        <div class="col-lg-4">
-          <h3>#Debugging</h3>
-          <p class="desc">when #programming questions get too detailed, use this channel to cut the noise and do 1:1 debugging with others</p>
-        </div>
-
-        <div class="col-lg-4">
-          <h3>#Technology</h3>
-          <p class="desc">As Arthur C. Clarke once said, "Any sufficiently advanced technology is indistinguishable from magic." ... But we Tech Masters know better, don't we? Let's talk about the tech we know and want to know.</p>
-        </div>
-
-        <div class="col-lg-4">
-          <h3>#Science</h3>
-          <p class="desc">Edward Teller once said, "The #science of today is the #technology of tomorrow." Let's talk about the things that will amaze us tomorrow!</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="clearfix"></div>
+  <div class="tm-card tm-card--join mdl-card mdl-color--white mdl-shadow--4dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop">
+    <h3 class="mdl-typography--text-center mdl-color-text--primary-dark">Join Now</h3>
+    <iframe src="https://technologymasters.herokuapp.com/" frameborder="0" width="100%" height="300"></iframe>
   </div>
-</section>
 
-<section class="join" id="join">
-  <iframe src="https://technologymasters.herokuapp.com/" frameborder="0" width="100%" height="410"></iframe>
-</section>
+  <div class="mdl-cell mdl-cell--12-col">
+    <h3 class="mdl-typography--text-center mdl-color-text--primary-dark">Official Communities</h3>
+  </div>
+
+  {% for partner in page.partners %}
+    <div class="tm-card tm-card-partner mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col {% cycle 'mdl-cell--2-offset-desktop', '', '', '' %}">
+      <div class="mdl-card__title mdl-card--expand mdl-typography--text-center">
+        <img src="/assets/images/partners/{{ partner.logo }}.png"/>
+      </div>
+
+      <div class="mdl-card__actions mdl-card--border mdl-typography--text-center">{{ partner.name }}</div>
+    </div>
+  {% endfor %}
+
+  <div class="mdl-cell mdl-cell--12-col">
+    <h3 class="mdl-typography--text-center mdl-color-text--primary-dark">Featured Channels</h3>
+  </div>
+
+  {% for channel in page.channels %}
+    <div class="tm-card tm-card-channel tm-card-channel--{{ channel.title | downcase }} mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col {% cycle 'mdl-cell--2-offset-desktop', '' %}">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">#{{ channel.title }}</h2>
+      </div>
+      <div class="mdl-card__supporting-text">{{ channel.description }}</div>
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect" href="https://techmasters.slack.com/messages/{{ channel.title | downcase }}/">Live Discussion</a>
+        <div class="mdl-layout-spacer"></div>
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="http://techmasters.slackarchive.io/{{ channel.title | downcase }}/">Archive</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>

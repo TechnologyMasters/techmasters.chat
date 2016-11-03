@@ -1,29 +1,33 @@
 ---
-layout: page
+layout: events
 title: Events
 ---
 
-<div id="app" v-cloak class="events">
-    <h4 class="text-right">Today is [[today | prettyDate]]</h4>
+<div id="app" v-cloak class="tm-container mdl-grid">
+  <div v-for="event in events" class="tm-card tm-card-event mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col mdl-cell--3-offset-desktop">
+    <div class="mdl-card__title">[[event.summary]]</div>
 
-    <ul class="agenda list-group">
-        <li v-for="event in events" class="list-group-item">
-            <h3>[[event.summary]]</h3>
-            <p>
-                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                <span class="start-time">[[event.start.dateTime | prettyDate]]</span>
-                <span> - </span>
-                <span class="end-time">[[event.end.dateTime | prettyDate]]</span>
-            </p>
-            <p v-if="event.location"><i class="fa fa-map-marker" aria-hidden="true"></i> <a :href="event.location | googleMapUrl" target="_blank">[[event.location]]</a></p>
-            <p><i class="fa fa-calendar" aria-hidden="true"></i> <a :href="event.htmlLink" target="_blank">Save to My Calendar</a></p>
-            <hr/>
-            <p v-if="event.description">[!!event.description!!]</p>
-        </li>
-        <li class="list-group-item no-events">
-          No upcoming events
-        </li>
-    </ul>
+
+    <div class="mdl-card__supporting-text" v-if="event.description">[!!event.description!!]</div>
+
+    <div class="mdl-card__supporting-text">
+      <span class="mdl-chip mdl-chip--contact">
+        <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white"><i class="material-icons">schedule</i></span>
+        <span class="mdl-chip__text">[[event.start.dateTime | prettyDate]]</span>
+      </span>
+
+      <span class="mdl-chip mdl-chip--contact" v-if="event.end">
+        <span class="mdl-chip__contact mdl-color--red mdl-color-text--white"><i class="material-icons">schedule</i></span>
+        <span class="mdl-chip__text">[[event.end.dateTime | prettyDate]]</span>
+      </span>
+    </div>
+
+    <div class="mdl-card__actions mdl-card--border">
+      <a :href="event.htmlLink" target="_blank" class="mdl-button mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect"><i class="material-icons">event</i> Add to Calendar</a>
+      <div class="mdl-layout-spacer"></div>
+      <a :href="event.location | googleMapUrl" target="_blank" v-if="event.location" class="mdl-button mdl-button--colored mdl-button--raised mdl-color--accent mdl-js-button mdl-js-ripple-effect"><i class="material-icons">place</i> Location</a>
+    </div>
+  </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.min.js"></script>
