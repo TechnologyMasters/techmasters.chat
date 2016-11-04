@@ -29,14 +29,19 @@ channels:
 partners:
   - name: Full Stack Toronto
     logo: fsto
+    link: http://fsto.co/
 
   - name: "#DevTO"
     logo: devto
+    link: http://www.devto.ca/
+
   - name: Fireside Conf
     logo: fireside
+    link: http://www.firesideconf.com/
 
   - name: Product Hunt Toronto
     logo: producthuntto
+    link: http://producthunttoronto.com/
 ---
 
 <div class="tm-container mdl-grid">
@@ -55,7 +60,7 @@ partners:
         <img src="/assets/images/partners/{{ partner.logo }}.png"/>
       </div>
 
-      <div class="mdl-card__actions mdl-card--border mdl-typography--text-center">{{ partner.name }}</div>
+      <div class="mdl-card__actions mdl-card--border mdl-typography--text-center"><a href="{{ partner.link }}">{{ partner.name }}</a></div>
     </div>
   {% endfor %}
 
