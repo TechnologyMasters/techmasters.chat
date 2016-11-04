@@ -4,12 +4,12 @@
 
 @import "base", "layout";
 
-.tm-hero {
-  margin-bottom: 80px;
+.tm-splash {
+  height: 45vh;
+}
 
-  h3 {
-    margin-top: 0;
-  }
+.tm-main {
+  margin-top: -12vh;
 }
 
 .tm-card-channel {

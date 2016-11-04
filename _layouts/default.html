@@ -11,7 +11,19 @@
           <script async defer src="https://technologymasters.herokuapp.com/slackin.js"></script>
       </header>
 
-      <div class="tm-splash mdl-color--primary"></div>
+      <div class="tm-splash">
+        <div class="tm-hero">
+          <div class="tm-container">
+            <h2 class="mdl-color-text--white mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop mdl-typography--text-center">
+              {% if page.layout == 'home' %}
+                {{ site.description }}
+              {% else %}
+                {{ page.title }}
+              {% endif %}
+            </h2>
+          </div>
+        </div>
+      </div>
 
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title"><img src="/assets/images/logo-white.png"/></span>
