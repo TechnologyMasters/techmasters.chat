@@ -27,12 +27,11 @@ channels:
       Edward Teller once said, "The #science of today is the #technology of tomorrow." Let's talk about the things that will amaze us tomorrow!
 
 partners:
-  - name: "#DevTO"
-    logo: devto
-
   - name: Full Stack Toronto
     logo: fsto
 
+  - name: "#DevTO"
+    logo: devto
   - name: Fireside Conf
     logo: fireside
 
@@ -51,7 +50,7 @@ partners:
   </div>
 
   {% for partner in page.partners %}
-    <div class="tm-card tm-card-partner mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col mdl-cell--4-col-phone {% cycle 'mdl-cell--2-offset-desktop', '', '', '' %}">
+    <div class="tm-card tm-card-partner mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col-phone mdl-cell--4-col-tablet mdl-cell--2-col-desktop {% cycle 'mdl-cell--2-offset-desktop', '', '', '' %}">
       <div class="mdl-card__title mdl-card--expand mdl-typography--text-center">
         <img src="/assets/images/partners/{{ partner.logo }}.png"/>
       </div>
@@ -65,7 +64,7 @@ partners:
   </div>
 
   {% for channel in page.channels %}
-    <div class="tm-card tm-card-channel tm-card-channel--{{ channel.title | downcase }} mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--8-col-phone {% cycle 'mdl-cell--2-offset-desktop', '' %}">
+    <div class="tm-card tm-card-channel tm-card-channel--{{ channel.title | downcase }} mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--4-col-desktop {% cycle 'mdl-cell--2-offset-desktop', '' %}">
       <div class="mdl-card__title">
         <h2 class="mdl-card__title-text">#{{ channel.title }}</h2>
       </div>
