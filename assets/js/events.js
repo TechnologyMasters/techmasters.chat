@@ -9,6 +9,8 @@ var calendarId = {{ site.googleCalendar.calendarId | jsonify }}
 Vue.config.delimiters = ['[[', ']]']
 Vue.config.unsafeDelimiters = ['[!!', '!!]']
 
+Vue.filter('marked', marked)
+
 Vue.filter('prettyDate', function (value) {
   var weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
@@ -42,6 +44,7 @@ var getJson = function (url, params, success, failure) {
   for (var attr in params) {
     pairs.push(attr + '=' + params[attr])
   }
+
   url += '?' + pairs.join('&')
 
   var request = new XMLHttpRequest()

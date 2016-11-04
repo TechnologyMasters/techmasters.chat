@@ -8,7 +8,7 @@ title: Events
     <div class="mdl-card__title">[[event.summary]]</div>
 
 
-    <div class="mdl-card__supporting-text" v-if="event.description">[!!event.description!!]</div>
+    <div class="mdl-card__supporting-text" v-if="event.description">[!!event.description | marked!!]</div>
 
     <div class="mdl-card__supporting-text">
       <span class="mdl-chip mdl-chip--contact">
@@ -29,6 +29,3 @@ title: Events
     </div>
   </div>
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.min.js"></script>
-<script src="/assets/js/events.js"></script>
