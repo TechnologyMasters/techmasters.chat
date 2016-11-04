@@ -10,41 +10,6 @@ You can set up a local version of the site to test changes. We highly recommend 
 
 Follow the [detailed instructions](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/) provided by Github for local setup.
 
-### Vagrant Installation
-
-If you're running a Windows OS, the Vagrant installation is the easiest approach.
-
-Vagrant will create a virtual machine, provision it with Jekyll and all its dependencies, 
-forward port `4000` to your host OS and synchronize the repository directory with a `/vagrant` 
-directory inside the virtual machine. This allows you to use your favourite IDE on your host OS.
-
-- Install [Vagrant](https://www.vagrantup.com/)
-- install [Vagrant Exec](https://github.com/p0deje/vagrant-exec): `vagrant plugin install vagrant-exec`
-- Open a terminal (`cmd` on Windows)
-  - `git clone <this_repo>`
-  - `cd <this_repo>`
-  - `vagrant up` then wait for Vagrant to finish provisioning the virtual machine
-
-#### Running Server
-
-To start serving the website
-
-```bash
-$ vagrant exec server
-```
-
-To ssh into the machine and serve the website *(Windows: you will need a valid SSH key setup with Vagrant)*:
-
-```bash
-$ vagrant ssh
-$ cd /vagrant
-$ server
-```
- 
-*on Windows, you might need [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)*
-
-The website will be available on [http://localhost:4000](http://localhost:4000).
-
 ## Contributing
 
 - Fork this repository on GitHub
