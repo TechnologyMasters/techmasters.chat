@@ -1,4 +1,4 @@
-function setPermalinks () {
+function applyPermalinks () {
   var headers = document.querySelectorAll('.tm-container h4')
 
   // Apply permalinks to headers
@@ -9,4 +9,4 @@ function setPermalinks () {
   }
 }
 
-setPermalinks()
+applyPermalinks()
