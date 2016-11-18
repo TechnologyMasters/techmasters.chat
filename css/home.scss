@@ -74,13 +74,13 @@
 }
 
 .tm-card-partner {
+  a {
+    text-decoration: none;
+  }
+
   > .mdl-card__title {
     height: 176px;
     justify-content: center;
-    
-    a {
-      text-decoration: none;
-    }
 
     img {
       max-width: 90%;
