@@ -13,12 +13,12 @@ title: Events
     <div class="mdl-card__supporting-text">
       <span class="mdl-chip mdl-chip--contact">
         <span class="mdl-chip__contact mdl-color--teal mdl-color-text--white"><i class="material-icons">schedule</i></span>
-        <span class="mdl-chip__text">[[event.start.dateTime | prettyDate]]</span>
+        <span class="mdl-chip__text">[[ date('start') ]]</span>
       </span>
 
       <span class="mdl-chip mdl-chip--contact" v-if="event.end">
         <span class="mdl-chip__contact mdl-color--red mdl-color-text--white"><i class="material-icons">schedule</i></span>
-        <span class="mdl-chip__text">[[event.end.dateTime | prettyDate]]</span>
+        <span class="mdl-chip__text">[[ date('end') ]]</span>
       </span>
     </div>
 
