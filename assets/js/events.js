@@ -72,6 +72,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   getJson(url, params,
     function (data) {
+      // TODO not accurate
+      data.items.sort((a, b) => Date.parse(a.start.dateTime) < Date.parse(b.start.dateTime))
       vue.$data.events = data.items
     },
 
