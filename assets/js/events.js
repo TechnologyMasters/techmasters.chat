@@ -1,84 +1,58 @@
 ---
 ---
 
-// TODO: pass these in to an init function to remove the need for front matter in js
-var apiKey = {{ site.googleCalendar.apiKey | jsonify }}
-var calendarId = {{ site.googleCalendar.calendarId | jsonify }}
+const calendar = Vue.resource('https://www.googleapis.com/calendar/v3/calendars{/id}/events')
 
-// change delimiters to not conflict with Jekyll templates
-Vue.config.delimiters = ['[[', ']]']
-Vue.config.unsafeDelimiters = ['[!!', '!!]']
-
-Vue.filter('marked', marked)
-
-Vue.filter('prettyDate', function (value) {
-  var weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-  var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-
-  var d = new Date(value)
-  var tzOffsetHours = d.getTimezoneOffset() / 60
-  var weekday = weekdays[d.getDay()]
-  var month = months[d.getMonth()]
-  var twelveHours = ((d.getHours() + 11) % 12 + 1)
-  var minutes = ('0' + d.getMinutes()).slice(-2)
-  var period = (d.getHours() >= 12 ? 'PM' : 'AM')
-  var timezone = 'UTC' + (tzOffsetHours >= 0 ? '+' : '') + tzOffsetHours
-  return '' + weekday + ', ' + month + ' ' + d.getDate() + ' @ ' + twelveHours + ':' + minutes + ' ' + period + ' ' + timezone
-})
-
-Vue.filter('googleMapUrl', function (value) {
-  return 'http://maps.google.com/?q=' + encodeURIComponent(value)
-})
-
-var vue = new Vue({
-  el: '#app',
-  data: {
-    events: []
-  }
-})
-
-var getJson = function (url, params, success, failure) {
-  // build parameter string
-  var pairs = []
-
-  for (var attr in params) {
-    pairs.push(attr + '=' + params[attr])
-  }
-
-  url += '?' + pairs.join('&')
-
-  var request = new XMLHttpRequest()
-  request.open('GET', url, true)
-
-  request.onload = function () {
-    if (this.status >= 200 && this.status < 400) {
-      success(JSON.parse(this.response))
-    }
-  }
-
-  request.onerror = function (err) {
-    failure(err)
-  }
-
-  request.send()
+const apiOptions = {
+  id: {{ site.googleCalendar.calendarId | jsonify }},
+  key: {{ site.googleCalendar.apiKey | jsonify }},
+  timeMin: (new Date()).toISOString()
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + '/events'
-  var params = {
-    key: apiKey,
-    orderBy: 'startTime',
-    singleEvents: true,
-    timeMin: (new Date()).toISOString()
-  }
+new Vue({
+  el: '#app',
+  components: {
+    event: {
+      delimiters: ['[[', ']]'],
+      template: '#event',
+      props: ['event'],
+      computed: {
+        description: function () {
+          return marked(this.event.description, { sanitize: true })
+        },
 
-  getJson(url, params,
-    function (data) {
-      vue.$data.events = data.items
-    },
+        location: function () {
+          return 'http://maps.google.com/?q=' + encodeURIComponent(this.event.location)
+        }
+      },
 
-    function (err) {
-      console.log('error', err)
+      methods: {
+        date: function (type) {
+          return moment(this.event[type].date || this.event[type].dateTime).calendar()
+        }
+      }
     }
-  )
+  },
+
+  data: {
+    events: {}
+  },
+
+  mounted: function () {
+    calendar
+      .get(apiOptions)
+      .then(response => response.json())
+      .then(data => data.items)
+      .then(events => {
+        events.sort((a, b) => {
+          a = moment(a.start.date || a.start.dateTime)
+          b = moment(b.start.date || b.start.dateTime)
+
+          return a.diff(b, 'minutes')
+        })
+
+        return events
+      })
+      .then(events => (this.$data.events = events))
+  }
 })

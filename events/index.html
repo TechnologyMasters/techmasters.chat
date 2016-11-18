@@ -4,11 +4,14 @@ title: Events
 ---
 
 <div id="app" v-cloak class="tm-container mdl-grid">
-  <div v-for="event in events" class="tm-card tm-card-event mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col mdl-cell--3-offset-desktop">
-    <div class="mdl-card__title">[[event.summary]]</div>
+  <event v-for="event in events" :event="event"></event>
+</div>
 
+<script type="text/x-template" id="event">
+  <div class="tm-card tm-card-event mdl-card mdl-shadow--2dp mdl-cell mdl-cell--6-col mdl-cell--3-offset-desktop">
+    <div class="mdl-card__title">[[ event.summary ]]</div>
 
-    <div class="mdl-card__supporting-text" v-if="event.description">[!!event.description | marked!!]</div>
+    <div class="mdl-card__supporting-text" v-if="event.description" v-html="description"></div>
 
     <div class="mdl-card__supporting-text">
       <span class="mdl-chip mdl-chip--contact">
@@ -24,8 +27,16 @@ title: Events
 
     <div class="mdl-card__actions mdl-card--border">
       <a :href="event.htmlLink" target="_blank" class="mdl-button mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect"><i class="material-icons">event</i> Add to Calendar</a>
+
       <div class="mdl-layout-spacer"></div>
-      <a :href="event.location | googleMapUrl" target="_blank" v-if="event.location" class="mdl-button mdl-button--colored mdl-button--raised mdl-color--accent mdl-js-button mdl-js-ripple-effect"><i class="material-icons">place</i> Location</a>
+
+      <a :href="location" target="_blank" v-if="event.location" class="mdl-button mdl-button--colored mdl-button--raised mdl-color--accent mdl-js-button mdl-js-ripple-effect"><i class="material-icons">place</i> Location</a>
     </div>
   </div>
-</div>
+</script>
+
+<script src="https://unpkg.com/vue@2.0.7/dist/vue.min.js"></script>
+<script src="https://unpkg.com/vue-resource@1.0.3/dist/vue-resource.min.js"></script>
+<script src="https://unpkg.com/moment@2.16.0/min/moment.min.js"></script>
+<script src="https://unpkg.com/marked@0.3.6/marked.min.js"></script>
+<script src="/assets/js/events.js"></script>
