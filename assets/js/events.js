@@ -64,7 +64,7 @@ var getJson = function (url, params, success, failure) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + '/events'
+  var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + '/events?orderBy=startTime&singleEvents=true'
   var params = {
     key: apiKey,
     timeMin: (new Date()).toISOString()
@@ -72,8 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   getJson(url, params,
     function (data) {
-      // TODO not accurate
-      data.items.sort((a, b) => Date.parse(a.start.dateTime) < Date.parse(b.start.dateTime))
       vue.$data.events = data.items
     },
 
