@@ -64,9 +64,11 @@ var getJson = function (url, params, success, failure) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + '/events?orderBy=startTime&singleEvents=true'
+  var url = 'https://www.googleapis.com/calendar/v3/calendars/' + calendarId + '/events'
   var params = {
     key: apiKey,
+    orderBy: 'startTime',
+    singleEvents: true,
     timeMin: (new Date()).toISOString()
   }
 
