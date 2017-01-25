@@ -9,7 +9,7 @@ const apiOptions = {
   timeMin: (new Date()).toISOString()
 }
 
-new Vue({
+$APP = new Vue({
   el: '#app',
   components: {
     event: {
@@ -53,6 +53,7 @@ new Vue({
 
         return events
       })
+      .then(events => events.filter(event => (new Date(event.start.dateTime)).getTime() > (new Date()).getTime()))
       .then(events => (this.$data.events = events))
   }
 })
