@@ -6,7 +6,8 @@ const calendar = Vue.resource('https://www.googleapis.com/calendar/v3/calendars{
 const apiOptions = {
   id: {{ site.googleCalendar.calendarId | jsonify }},
   key: {{ site.googleCalendar.apiKey | jsonify }},
-  timeMin: (new Date()).toISOString()
+  timeMin: moment().subtract(1, 'week').toISOString(),
+  timeMax: moment().add(3, 'months').toISOString()
 }
 
 $APP = new Vue({
@@ -43,6 +44,7 @@ $APP = new Vue({
       .get(apiOptions)
       .then(response => response.json())
       .then(data => data.items)
+      .then(events => events.filter(event => event.status != 'cancelled'))
       .then(events => {
         events.sort((a, b) => {
           a = moment(a.start.date || a.start.dateTime)
