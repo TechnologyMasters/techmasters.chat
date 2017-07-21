@@ -4,7 +4,7 @@ title: Code of Conduct
 redirect_from: "/coc/"
 ---
 
-Last modified: July 18, 2016
+Last modified: July 19, 2017
 
 #### Welcome to the TechMasters Community!
 
@@ -38,11 +38,19 @@ TechMasters does not allow the posting of destructive features, use of computer 
 
 Falsely impersonating a TechMasters organizer, administrator, or any other person with the intent to mislead or cause harm to others is forbidden.
 
-#### Don't Spam
+#### Dealing With Spam (Don't Spam)
 
-Please don't "spam" through our Slack; none of our users like it. To spam includes sending identical and irrelevant submissions to many different channels or users through private messages. Usually such postings have nothing to do with the particular topic of a channel or are of no real interest to those in a given channel. To spam also includes misrepresenting the source of anything you say or post. Spamming and message flooding (the act of typing/pasting so much information in one channel as to require users to excessively scroll to a previously relevant discussion) in chat rooms are serious violations of online etiquette.
+Although not explicitly called out in this CoC, we ask that all moderators be aware of and intervene in the case of spam.
 
-TechMasters reserves the right to ban a user at any time, without notice, from the Slack for spamming.
+Please don't "spam" through our Slack as none of our users like it. Spam is a post or a series of posts where the content is primarily solicitation, nonsense, overly short/long, or off-topic. Posts, where the content is not hand-crafted or is too generic/useless, may also be considered spam. Spam accounts are user accounts which post spam content or are created in series to secure access to the site and its privileges, or both. Spam posts and accounts may be automated or manual.
+
+We realize spam can be hard to define in some cases, so we will rely on the community or moderators to identify and flag it and handle it appropriately. Obvious spam posts should be promptly deleted; non-obvious spam may be flagged for review. Users are encouraged to flag posts as spam to help bring them to a moderator’s attention.
+
+Not all spam posts are by spam users. For example, a legitimate user account may be compromised. If a moderator notices a reputable user account posting spam, the spam post(s) should be deleted immediately, and the user notified. If spam posts continue, the account may be suspended until the user can regain control of his/her account.
+
+Commercial content is allowed if relevant to answering a question or keeping in line with a topic. Additionally, TechMasters has a couple of channels dedicated to specific, relevant, commercial content. These channels include #Deals for posting deal-related content (sales, coupons, etc.), and #Showcase where users can feature their own start-ups and services.
+
+TechMasters reserves the right to delete spam content as well as banning a user at any time, without notice, from the Slack for spamming.
 
 #### Recruit Invisibly and Respectfully
 
@@ -96,5 +104,9 @@ If you are being harassed, notice that someone else is being harassed, or have o
 * **Andrew Moore** - Contact [@awmoore on Slack](https://techmasters.slack.com/messages/@awmoore) or [by email](mailto:andrew@techmasters.email).
 * **Jasna Todorovic** - Contact [@jasna on Slack](https://techmasters.slack.com/messages/@jasna) or [by email](mailto:jasna@techmasters.email).
 * View the rest of our Admins by navigating to the [Team page](https://techmasters.slack.com/team) and clicking "view admins" at the top.
+
+##### Acknowledgements
+
+Parts of the **Dealing With Spam** section of this Code of Conduct were derived from the GoBridge Code of Conduct document.
 
 Thanks for following this Code of Conduct and joining the TechMasters community!
