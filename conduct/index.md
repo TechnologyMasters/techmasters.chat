@@ -53,7 +53,6 @@ Commercial content is allowed if relevant to answering a question or keeping in 
 TechMasters reserves the right to delete spam content as well as banning a user at any time, without notice, from the Slack for spamming. Some examples of spam include, but are not limited to:
 
 - Posting the same message to more than 1 channel.
-- Sharing shortened links.
 - Sharing your own email in a public channel.
 - Requesting members to fill a feedback form without consulting an admin prior to posting.
 - Poaching members to join your community.
