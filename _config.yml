@@ -13,5 +13,6 @@ googleCalendar:
 
 exclude: [scripts]
 
-gems:
+plugins:
   - jekyll-redirect-from
+  - jekyll-bootstrap-sass
