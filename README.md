@@ -23,6 +23,12 @@ Follow the [detailed instructions](https://help.github.com/articles/setting-up-y
 - `git push -u origin feature-branch-name`
 - Create a pull request on GitHub
 
+## Testing Locally
+
+```
+docker run -p 80:80 --rm --volume=$PWD:/srv/jekyll -it jekyll/jekyll:3.5 jekyll serve --watch --port 80
+```
+
 ### Rules for Contributing
 
 - Please maintain the same the same code style as the rest of the code base.

@@ -1,11 +1,15 @@
 ---
 layout: page
 title: Job Board
+bootstrap: true
 ---
 
-<ul id="jobs">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-</ul>
+
+<div class="list-group" id="jobs">
+
+</div>
 
 <script>
 (function () {
@@ -18,8 +22,12 @@ title: Job Board
   var jobs = null
 
   var jobContainer = document.getElementById('jobs')
-  var jobItem = function (contents) {
-    return '<li>' + contents + '</li>'
+  var jobItem = function (element) {
+    date = new Date(element.created_at)
+    var dateOptions = {
+      year: "numeric", month: "short", day: "numeric"
+    };
+    return '<a class="list-group-item"><h4><span class="job-title">' + element.title + '</span><span class="badge pull-right">' + date.toLocaleDateString("en-US", dateOptions) + '</span></h4></a>'
   }
 
   // Get jobs json
@@ -40,7 +48,7 @@ title: Job Board
     var jobCollection = ''
 
     jobs.forEach(function(element) {
-      jobCollection += jobItem(element.title)
+      jobCollection += jobItem(element)
     });
 
     jobContainer.innerHTML = jobCollection
