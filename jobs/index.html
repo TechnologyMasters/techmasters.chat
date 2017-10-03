@@ -3,12 +3,47 @@ layout: page
 title: Job Board
 ---
 
-<div id="jobs">
+<ul id="jobs">
 
-</div>
+</ul>
 
 <script>
-// Get jobs json (top 10)
+(function () {
+  var api = {
+    endpoint: 'https://api.github.com/repos/TechnologyMasters/jobs/issues',
+    headers: {
+      Accept: 'application/vnd.github.v3+json'
+    }
+  }
+  var jobs = null
 
-// Create paginated list
+  var jobContainer = document.getElementById('jobs')
+  var jobItem = function (contents) {
+    return '<li>' + contents + '</li>'
+  }
+
+  // Get jobs json
+  var request = new XMLHttpRequest()
+  request.open('GET', api.endpoint)
+  request.setRequestHeader('Accept', api.headers.Accept)
+  request.onload = function () {
+    if (request.status >= 200) {
+      jobs = JSON.parse(request.responseText)
+      setupJobs()
+    }
+  }
+
+  request.send()
+
+  // Create paginated list
+  var setupJobs = function () {
+    var jobCollection = ''
+
+    jobs.forEach(function(element) {
+      jobCollection += jobItem(element.title)
+    });
+
+    jobContainer.innerHTML = jobCollection
+  }
+})()
 </script>
