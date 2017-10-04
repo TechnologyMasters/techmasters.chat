@@ -4,7 +4,7 @@ title: Job Board
 css: jobs
 ---
 
-<table class="tm-jobs-table mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+<table id="job-table" class="tm-jobs-table mdl-data-table mdl-js-data-table mdl-shadow--2dp">
   <thead>
     <tr class="mdl-data-table__cell--non-numeric">
       <th class="mdl-data-table__cell--non-numeric">Job</th>
@@ -12,74 +12,14 @@ css: jobs
       <th class="mdl-data-table__cell--non-numeric show-desktop-up">Labels</th>
     </tr>
   </thead>
-  <tbody id="job-body">
+  <tbody id="job-body" class="tm-job-body">
   </tbody>
 </table>
 
-<script>
-(function () {
-  // Data
-  var api = {
-    endpoint: 'https://api.github.com/repos/TechnologyMasters/jobs/issues',
-    headers: {
-      Accept: 'application/vnd.github.v3+json'
-    }
-  }
-  var jobs = null
+<div id="tm-jobs-description" class="tm-jobs-description">
+  <button onClick="JobBoard.collapse()">Back to jobs</button>
+  <div id="tm-jobs-description_body"></div>
+</div>
 
-  // Components
-  var jobContainer = document.getElementById('job-body')
-  var jobItem = function (element) {
-    var date = new Date(element.created_at)
-    var dateOptions = {
-      year: "numeric", month: "short", day: "numeric"
-    }
-    var postedDate = date.toLocaleDateString("en-US", dateOptions)
-
-    var labels = ''
-    element.labels.forEach(function(label) {
-      labels += '\
-        <span class="mdl-chip">\
-          <span class="mdl-chip__text">' + label.name + '</span>\
-        </span>'
-    })
-
-    return '\
-      <tr>\
-        <td class="mdl-data-table__cell--non-numeric">\
-          ' + element.title + '\
-        </td>\
-        <td class="mdl-data-table__cell--non-numeric show-tablet-up">\
-          ' + postedDate + '\
-        </td>\
-        <td class="mdl-data-table__cell--non-numeric show-desktop-up">\
-          ' + labels + '\
-        </td>\
-      </tr>'
-  }
-
-  // Get jobs json
-  var request = new XMLHttpRequest()
-  request.open('GET', api.endpoint)
-  request.setRequestHeader('Accept', api.headers.Accept)
-  request.onload = function () {
-    if (request.status >= 200) {
-      jobs = JSON.parse(request.responseText)
-      setupJobs()
-    }
-  }
-
-  request.send()
-
-  // Create paginated list
-  var setupJobs = function () {
-    var jobCollection = ''
-
-    jobs.forEach(function (element) {
-      jobCollection += jobItem(element)
-    });
-
-    jobContainer.innerHTML = jobCollection
-  }
-})()
-</script>
+<script src="/assets/js/showdown.min.js"></script>
+<script src="/assets/js/jobs.js"></script>

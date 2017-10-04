@@ -2,7 +2,7 @@
 <html>
   {% include head.html %}
 
-  <body class="mdl-color--grey-100 mdl-color-text--grey-800 mdl-base">
+  <body class="mdl-color--grey-100 mdl-color-text--grey-800 mdl-base {{ page.title | slugify }}">
     <div class="mdl-layout mdl-layout--fixed-header mdl-js-layout">
       <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
         <div class="mdl-layout__header-row">

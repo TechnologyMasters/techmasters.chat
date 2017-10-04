@@ -1,10 +1,21 @@
 ---
 ---
 
+.job-board .tm-main {
+  margin-top: 0;
+}
 .tm-jobs-table {
   width: 100%;
+
+  tr[role="button"] {
+    cursor: pointer;
+  }
+
+  td {
+    min-width: 130px;
+    white-space: normal;
+  }
 }
-.tm-jobs-table td {
-  min-width: 130px;
-  white-space: normal;
+.tm-jobs-description {
+  display: none;
 }
