@@ -1,18 +1,24 @@
 ---
-layout: page
+layout: page-min
 title: Job Board
-bootstrap: true
+css: jobs
 ---
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
-<div class="list-group" id="jobs">
-
-</div>
+<table class="tm-jobs-table mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+  <thead>
+    <tr class="mdl-data-table__cell--non-numeric">
+      <th class="mdl-data-table__cell--non-numeric">Job</th>
+      <th class="mdl-data-table__cell--non-numeric show-tablet-up">Date Posted</th>
+      <th class="mdl-data-table__cell--non-numeric show-desktop-up">Labels</th>
+    </tr>
+  </thead>
+  <tbody id="job-body">
+  </tbody>
+</table>
 
 <script>
 (function () {
+  // Data
   var api = {
     endpoint: 'https://api.github.com/repos/TechnologyMasters/jobs/issues',
     headers: {
@@ -21,13 +27,35 @@ bootstrap: true
   }
   var jobs = null
 
-  var jobContainer = document.getElementById('jobs')
+  // Components
+  var jobContainer = document.getElementById('job-body')
   var jobItem = function (element) {
-    date = new Date(element.created_at)
+    var date = new Date(element.created_at)
     var dateOptions = {
       year: "numeric", month: "short", day: "numeric"
-    };
-    return '<a class="list-group-item"><h4><span class="job-title">' + element.title + '</span><span class="badge pull-right">' + date.toLocaleDateString("en-US", dateOptions) + '</span></h4></a>'
+    }
+    var postedDate = date.toLocaleDateString("en-US", dateOptions)
+
+    var labels = ''
+    element.labels.forEach(function(label) {
+      labels += '\
+        <span class="mdl-chip">\
+          <span class="mdl-chip__text">' + label.name + '</span>\
+        </span>'
+    })
+
+    return '\
+      <tr>\
+        <td class="mdl-data-table__cell--non-numeric">\
+          ' + element.title + '\
+        </td>\
+        <td class="mdl-data-table__cell--non-numeric show-tablet-up">\
+          ' + postedDate + '\
+        </td>\
+        <td class="mdl-data-table__cell--non-numeric show-desktop-up">\
+          ' + labels + '\
+        </td>\
+      </tr>'
   }
 
   // Get jobs json
@@ -47,7 +75,7 @@ bootstrap: true
   var setupJobs = function () {
     var jobCollection = ''
 
-    jobs.forEach(function(element) {
+    jobs.forEach(function (element) {
       jobCollection += jobItem(element)
     });
 

@@ -56,6 +56,17 @@
   }
 }
 
+@media (max-width: 480px) {
+  .show-tablet-up {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .show-desktop-up {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .tm-content {
     padding: 40px 28px;

@@ -1,4 +1,10 @@
 ---
 ---
 
-@import 'bootstrap';
+.tm-jobs-table {
+  width: 100%;
+}
+.tm-jobs-table td {
+  min-width: 130px;
+  white-space: normal;
+}
