@@ -2,6 +2,18 @@
 
 var sdConverter = new showdown.Converter()
 
+window.onload = function(event)
+{
+  if (location.hash != "") {
+    JobBoard.load()
+  }
+}
+
+window.onpopstate = function(event)
+{
+  JobBoard.collapse()
+}
+
 var JobBoard = (function () {
   // Data
   var api = {
@@ -97,13 +109,23 @@ var JobBoard = (function () {
 
     jobBody.innerHTML = jobCollection
   }
+  
+  var jobById = function(job) {
+    return job.id == location.hash.replace("#", "")
+  }
 
   return {
+    load: function () {
+      jobDescription.set(sdConverter.makeHtml(jobs.find(jobById).body)).open()
+      jobTable.close()
+    },
     expand: function (el) {
+      history.pushState(undefined, undefined, "#" + jobs[el.dataset.index].id)
       jobDescription.set(sdConverter.makeHtml(jobs[el.dataset.index].body)).open()
       jobTable.close()
     },
     collapse: function () {
+      history.pushState("", document.title, window.location.pathname + window.location.search)
       jobDescription.close()
       jobTable.open()
     }
