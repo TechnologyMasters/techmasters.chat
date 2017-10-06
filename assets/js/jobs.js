@@ -116,7 +116,13 @@ var JobBoard = (function () {
 
   return {
     load: function () {
-      jobDescription.set(sdConverter.makeHtml(jobs.find(jobById).body)).open()
+      var job = jobs.find(jobById)
+      if (job == undefined) {
+        history.pushState("", document.title, window.location.pathname + window.location.search)
+        return
+      }
+
+      jobDescription.set(sdConverter.makeHtml(job.body)).open()
       jobTable.close()
     },
     expand: function (el) {
