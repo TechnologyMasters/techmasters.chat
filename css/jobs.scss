@@ -5,6 +5,7 @@
   margin-top: 0;
 }
 .tm-jobs-table {
+  display: none;
   width: 100%;
 
   tr[role="button"] {
@@ -18,4 +19,15 @@
 }
 .tm-jobs-description {
   display: none;
+  padding: 1rem;
+  word-wrap: break-word;
+
+  @media(min-width: 480px) {
+    padding: 2rem;
+  }
+}
+
+.tm-jobs-description_backButton {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }

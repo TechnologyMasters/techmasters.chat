@@ -1,30 +1,24 @@
-/* globals showdown */
+/* globals showdown, XMLHttpRequest, history, Promise */
 
-var sdConverter = new showdown.Converter()
+var sdConverter = new showdown.Converter({
+  simplifiedAutoLink: true
+})
 
-window.onload = function(event)
-{
-  if (location.hash != "") {
-    JobBoard.load()
-  }
-}
-
-window.onpopstate = function(event)
-{
-  JobBoard.collapse()
-}
-
+// Job Board Controller
 var JobBoard = (function () {
-  // Data
+  // Options
   var api = {
     endpoint: 'https://api.github.com/repos/TechnologyMasters/jobs/issues',
     headers: {
       Accept: 'application/vnd.github.v3+json'
     }
   }
-  var jobs = null
+  var jobs = null // contains fetched jobs
 
-  // Components
+  /**
+   * Components
+   */
+
   var jobTable = (function (el) {
     var element = el
 
@@ -38,16 +32,28 @@ var JobBoard = (function () {
     }
   })(document.getElementById('job-table'))
 
-  var jobBody = document.getElementById('job-body')
+  // Wrapper for job rows
+  var jobBody = (function (el) {
+    var element = el
+
+    return {
+      set: function (value) {
+        element.innerHTML = value
+        return element
+      }
+    }
+  })(document.getElementById('job-body'))
+
+  // Single table row containing job details
   var jobItem = function (element, index) {
     var date = new Date(element.created_at)
     var dateOptions = {
-      year: "numeric", month: "short", day: "numeric"
+      year: 'numeric', month: 'short', day: 'numeric'
     }
-    var postedDate = date.toLocaleDateString("en-US", dateOptions)
+    var postedDate = date.toLocaleDateString('en-US', dateOptions)
 
     var labels = ''
-    element.labels.forEach(function(label) {
+    element.labels.forEach(function (label) {
       labels += '\
         <span class="mdl-chip">\
           <span class="mdl-chip__text">' + label.name + '</span>\
@@ -55,7 +61,7 @@ var JobBoard = (function () {
     })
 
     return '\
-      <tr role="button" tabindex="0" data-index="' + index + '" onClick="JobBoard.expand(this)">\
+      <tr role="button" tabindex="0" data-index="' + index + '" onClick="JobBoard.expand(this.dataset.index)">\
         <td class="mdl-data-table__cell--non-numeric">\
           ' + element.title + '\
         </td>\
@@ -68,13 +74,19 @@ var JobBoard = (function () {
       </tr>'
   }
 
-  var jobDescription = (function (el, body) {
+  // "Expanded job description" wrapper
+  var jobDescription = (function (el, title, body) {
     var element = el
+    var elTitle = title
     var elBody = body
 
     return {
-      set: function (html) {
-        elBody.innerHTML = html
+      setTitle: function (title) {
+        elTitle.innerHTML = title
+        return this
+      },
+      setBody: function (html, raw) {
+        elBody.innerHTML = raw ? html : sdConverter.makeHtml(html)
         return this
       },
       close: function () {
@@ -84,56 +96,89 @@ var JobBoard = (function () {
         element.style.display = 'block'
       }
     }
-  })(document.getElementById('tm-jobs-description'), document.getElementById('tm-jobs-description_body'))
-
-  // Get jobs json
-  var request = new XMLHttpRequest()
-  request.open('GET', api.endpoint)
-  request.setRequestHeader('Accept', api.headers.Accept)
-  request.onload = function () {
-    if (request.status >= 200) {
-      jobs = JSON.parse(request.responseText)
-      setupJobs()
-    }
-  }
-
-  request.send()
-
-  // Create paginated list
-  var setupJobs = function () {
-    var jobCollection = ''
-
-    jobs.forEach(function (element, index) {
-      jobCollection += jobItem(element, index)
-    });
-
-    jobBody.innerHTML = jobCollection
-  }
-  
-  var jobById = function(job) {
-    return job.id == location.hash.replace("#", "")
-  }
+  })(
+    document.getElementById('tm-jobs-description'),
+    document.getElementById('tm-jobs-description_title'),
+    document.getElementById('tm-jobs-description_body')
+    )
 
   return {
-    load: function () {
-      var job = jobs.find(jobById)
-      if (job == undefined) {
-        history.pushState("", document.title, window.location.pathname + window.location.search)
+    loadHash: function () {
+      var findJob = function (el) {
+        return el.id === parseInt(window.location.hash.replace('#', ''))
+      }
+
+      var job = jobs.find(findJob)
+      var jobIndex = jobs.findIndex(findJob)
+      if (!!job === false) {
         return
       }
 
-      jobDescription.set(sdConverter.makeHtml(job.body)).open()
-      jobTable.close()
+      this.expand(
+        jobIndex,
+        document.title,
+        window.location.pathname + window.location.search
+      )
     },
-    expand: function (el) {
-      history.pushState(undefined, undefined, "#" + jobs[el.dataset.index].id)
-      jobDescription.set(sdConverter.makeHtml(jobs[el.dataset.index].body)).open()
+    loadJobs: function () {
+      // Get jobs json
+      var self = this
+      var request = new XMLHttpRequest()
+
+      var promise = new Promise(function (resolve, reject) {
+        request.open('GET', api.endpoint)
+        request.setRequestHeader('Accept', api.headers.Accept)
+        request.onload = function () {
+          if (request.status >= 200) {
+            jobs = JSON.parse(request.responseText)
+            self.listJobs()
+            resolve()
+          }
+        }
+        request.send()
+      })
+
+      return promise
+    },
+    expand: function (index, title, path) {
+      history.pushState(undefined, undefined, '#' + jobs[index].id)
+      jobDescription
+        .setTitle(jobs[index].title)
+        .setBody(jobs[index].body)
+        .open()
       jobTable.close()
     },
     collapse: function () {
-      history.pushState("", document.title, window.location.pathname + window.location.search)
+      history.pushState(
+        '',
+        document.title,
+        window.location.pathname + window.location.search
+      )
       jobDescription.close()
       jobTable.open()
-    }
+    },
+    listJobs: function () {
+      var jobCollection = ''
+
+      jobs.forEach(function (element, index) {
+        jobCollection += jobItem(element, index)
+      })
+
+      jobBody.set(jobCollection)
+    },
+    showTable: jobTable.open
   }
 })()
+
+// Main
+JobBoard.loadJobs().then(function () { // fetch job data from GitHub
+  if (window.location.hash !== '') {
+    JobBoard.loadHash()
+  } else {
+    JobBoard.showTable()
+  }
+})
+
+window.onpopstate = function (event) {
+  JobBoard.collapse()
+}

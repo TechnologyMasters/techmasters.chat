@@ -17,9 +17,12 @@ css: jobs
 </table>
 
 <div id="tm-jobs-description" class="tm-jobs-description">
-  <button onClick="JobBoard.collapse()">Back to jobs</button>
+  <button class="mdl-button mdl-js-button" onClick="JobBoard.collapse()">Back to jobs</button>
+  <hr>
+  <h2 id="tm-jobs-description_title"></h2>
   <div id="tm-jobs-description_body"></div>
 </div>
 
-<script src="/assets/js/showdown.min.js"></script>
+<script src="https://unpkg.com/showdown@1.7.6/dist/showdown.min.js"></script>
+<script src="https://unpkg.com/bluebird@3.5.1/js/browser/bluebird.min.js"></script>
 <script src="/assets/js/jobs.js"></script>
