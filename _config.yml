@@ -11,6 +11,8 @@ googleCalendar:
   apiKey: AIzaSyD5FZvh3-1WZMbBj0M10zzO3GEQQlYADXg
   calendarId: zamtools.com_sksehlk62uahqednpmvbp7isno@group.calendar.google.com
 
+newJob: https://github.com/TechnologyMasters/jobs/issues/new
+
 exclude: [scripts]
 
 gems:

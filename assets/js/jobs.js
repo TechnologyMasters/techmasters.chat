@@ -97,9 +97,9 @@ var JobBoard = (function () {
       }
     }
   })(
-    document.getElementById('tm-jobs-description'),
-    document.getElementById('tm-jobs-description_title'),
-    document.getElementById('tm-jobs-description_body')
+    document.getElementById('tm-jobs_description'),
+    document.getElementById('tm-jobs_description_title'),
+    document.getElementById('tm-jobs_description_body')
     )
 
   return {

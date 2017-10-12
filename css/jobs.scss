@@ -4,7 +4,12 @@
 .job-board .tm-main {
   margin-top: 0;
 }
-.tm-jobs-table {
+
+.tm-jobs_add {
+  background-color: #ededed;
+}
+
+.tm-jobs_table {
   display: none;
   width: 100%;
 
@@ -17,7 +22,8 @@
     white-space: normal;
   }
 }
-.tm-jobs-description {
+
+.tm-jobs_description {
   display: none;
   padding: 1rem;
   word-wrap: break-word;
@@ -27,7 +33,7 @@
   }
 }
 
-.tm-jobs-description_backButton {
+.tm-jobs_description_backButton {
   padding: 0.5rem 1rem;
   cursor: pointer;
 }

@@ -4,7 +4,13 @@ title: Job Board
 css: jobs
 ---
 
-<table id="job-table" class="tm-jobs-table mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+<div class="tm-jobs_add">
+  <a href="{{ site.newJob }}" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+    <i class="material-icons">add</i> Post job to GitHub
+  </a>
+</div>
+
+<table id="job-table" class="tm-jobs_table mdl-data-table mdl-js-data-table mdl-shadow--2dp">
   <thead>
     <tr class="mdl-data-table__cell--non-numeric">
       <th class="mdl-data-table__cell--non-numeric">Job</th>
@@ -16,11 +22,11 @@ css: jobs
   </tbody>
 </table>
 
-<div id="tm-jobs-description" class="tm-jobs-description">
+<div id="tm-jobs_description" class="tm-jobs_description">
   <button class="mdl-button mdl-js-button" onClick="JobBoard.collapse()">Back to jobs</button>
   <hr>
-  <h2 id="tm-jobs-description_title"></h2>
-  <div id="tm-jobs-description_body"></div>
+  <h2 id="tm-jobs_description_title"></h2>
+  <div id="tm-jobs_description_body"></div>
 </div>
 
 <script src="https://unpkg.com/showdown@1.7.6/dist/showdown.min.js"></script>
