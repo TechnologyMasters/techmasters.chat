@@ -45,15 +45,15 @@ var JobBoard = (function () {
   })(document.getElementById('job-body'))
 
   // Single table row containing job details
-  var jobItem = function (element, index) {
-    var date = new Date(element.created_at)
+  var buildJobItem = function (job, index) {
+    var date = new Date(job.created_at)
     var dateOptions = {
       year: 'numeric', month: 'short', day: 'numeric'
     }
     var postedDate = date.toLocaleDateString('en-US', dateOptions)
 
     var labels = ''
-    element.labels.forEach(function (label) {
+    job.labels.forEach(function (label) {
       labels += '\
         <span class="mdl-chip">\
           <span class="mdl-chip__text">' + label.name + '</span>\
@@ -63,7 +63,7 @@ var JobBoard = (function () {
     return '\
       <tr role="button" tabindex="0" data-index="' + index + '" onClick="JobBoard.expand(this.dataset.index)">\
         <td class="mdl-data-table__cell--non-numeric">\
-          ' + element.title + '\
+          ' + job.title + '\
         </td>\
         <td class="mdl-data-table__cell--non-numeric show-tablet-up">\
           ' + postedDate + '\
@@ -81,12 +81,9 @@ var JobBoard = (function () {
     var elBody = body
 
     return {
-      setTitle: function (title) {
+      setHtml: function (title, body, raw) {
         elTitle.innerHTML = title
-        return this
-      },
-      setBody: function (html, raw) {
-        elBody.innerHTML = raw ? html : sdConverter.makeHtml(html)
+        elBody.innerHTML = raw ? body : sdConverter.makeHtml(body)
         return this
       },
       close: function () {
@@ -114,11 +111,7 @@ var JobBoard = (function () {
         return
       }
 
-      this.expand(
-        jobIndex,
-        document.title,
-        window.location.pathname + window.location.search
-      )
+      this.expand(jobIndex)
     },
     loadJobs: function () {
       // Get jobs json
@@ -140,11 +133,10 @@ var JobBoard = (function () {
 
       return promise
     },
-    expand: function (index, title, path) {
+    expand: function (index) {
       history.pushState(undefined, undefined, '#' + jobs[index].id)
       jobDescription
-        .setTitle(jobs[index].title)
-        .setBody(jobs[index].body)
+        .setHtml(jobs[index].title, jobs[index].body)
         .open()
       jobTable.close()
     },
@@ -158,13 +150,8 @@ var JobBoard = (function () {
       jobTable.open()
     },
     listJobs: function () {
-      var jobCollection = ''
-
-      jobs.forEach(function (element, index) {
-        jobCollection += jobItem(element, index)
-      })
-
-      jobBody.set(jobCollection)
+      var jobTableRowsHtml = jobs.map(buildJobItem).join('')
+      jobBody.set(jobTableRowsHtml)
     },
     showTable: jobTable.open
   }
