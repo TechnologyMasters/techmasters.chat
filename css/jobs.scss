@@ -1,0 +1,39 @@
+---
+---
+
+.job-board .tm-main {
+  margin-top: 0;
+}
+
+.tm-jobs_add {
+  background-color: #ededed;
+}
+
+.tm-jobs_table {
+  display: none;
+  width: 100%;
+
+  tr[role="button"] {
+    cursor: pointer;
+  }
+
+  td {
+    min-width: 130px;
+    white-space: normal;
+  }
+}
+
+.tm-jobs_description {
+  display: none;
+  padding: 1rem;
+  word-wrap: break-word;
+
+  @media(min-width: 480px) {
+    padding: 2rem;
+  }
+}
+
+.tm-jobs_description_backButton {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
