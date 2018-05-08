@@ -95,6 +95,10 @@
   padding: 60px;
   margin-bottom: 60px;
 
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+
   h3 {
     margin-top: 48px;
   }
@@ -102,4 +106,5 @@
 
 .mdl-layout {
   height: auto;
+  min-height: 100vh;
 }
