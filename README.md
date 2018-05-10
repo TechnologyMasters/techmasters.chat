@@ -25,8 +25,12 @@ Follow the [detailed instructions](https://help.github.com/articles/setting-up-y
 
 ## Testing Locally
 
-```
+```sh
+# Docker
 docker run -p 80:80 --rm --volume=$PWD:/srv/jekyll -it jekyll/jekyll:3.5 jekyll serve --watch --port 80
+
+# Jekyll (requires Ruby with bundler and jekyll gems)
+bundle exec jekyll serve
 ```
 
 ### Rules for Contributing

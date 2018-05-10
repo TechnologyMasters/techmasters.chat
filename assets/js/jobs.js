@@ -150,7 +150,9 @@ var JobBoard = (function () {
       jobTable.open()
     },
     listJobs: function () {
-      var jobTableRowsHtml = jobs.map(buildJobItem).join('')
+      var jobTableRowsHtml = jobs.filter(function (job) {
+        return !job.pull_request
+      }).map(buildJobItem).join('')
       jobBody.set(jobTableRowsHtml)
     },
     showTable: jobTable.open
