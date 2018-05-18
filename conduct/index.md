@@ -14,7 +14,7 @@ As part of the TechMasters community’s commitment to making the TechMasters Sl
 
 We encourage everyone to treat each other with mutual respect. Do not use the Slack to threaten, harass, stalk, or abuse others participating in these services.
 
-TechMasters reserves the right to remove messages that advocate or encourage expressions of violence, bigotry, racism, hatred, or profanity.
+TechMasters reserves the right to remove messages that advocate or encourage expressions of violence, bigotry, racism, hatred, or profanity. This includes [hate speech](https://en.wikipedia.org/wiki/Hate_speech), or producing strong allegations that may marginalise or threaten certain groups without backing such claims with a reputable citation.
 
 TechMasters may remove messages and files that are deemed inappropriate, offensive or that violate this Code of Conduct. TechMasters may also eject or ban any user from the Slack who behaves in a manner deemed inappropriate, offensive or who violates this Code of Conduct.
 
