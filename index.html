@@ -28,20 +28,24 @@ channels:
 
 partners:
   - name: Full Stack Toronto
-    logo: fsto
+    logo: fsto.png
     link: http://fsto.co/
 
   - name: "#DevTO"
-    logo: devto
+    logo: devto.png
     link: http://www.devto.ca/
 
   - name: Fireside Conf
-    logo: fireside
+    logo: fireside.png
     link: http://www.firesideconf.com/
 
-  - name: Product Hunt Toronto
-    logo: producthuntto
-    link: http://producthunttoronto.com/
+  - name: NodeDay
+    logo: nodeday.jpg
+    link: http://nodeday.com/
+
+  - name: Functions17
+    logo: functions17.jpg
+    link: http://functions.world/
 ---
 
 <div class="tm-container mdl-grid">
@@ -57,7 +61,7 @@ partners:
   {% for partner in page.partners %}
     <div class="tm-card tm-card-partner mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col-phone mdl-cell--4-col-tablet mdl-cell--2-col-desktop {% cycle 'mdl-cell--2-offset-desktop', '', '', '' %}">
       <div class="mdl-card__title mdl-card--expand mdl-typography--text-center">
-        <img src="/assets/images/partners/{{ partner.logo }}.png"/>
+        <img src="/assets/images/partners/{{ partner.logo }}"/>
       </div>
 
       <div class="mdl-card__actions mdl-card--border mdl-typography--text-center"><a href="{{ partner.link }}">{{ partner.name }}</a></div>
