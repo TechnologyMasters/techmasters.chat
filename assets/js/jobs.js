@@ -123,7 +123,10 @@ var JobBoard = (function () {
         request.setRequestHeader('Accept', api.headers.Accept)
         request.onload = function () {
           if (request.status >= 200) {
-            jobs = JSON.parse(request.responseText)
+            jobs = JSON.parse(request.responseText).filter(function (job) {
+              return !job.pull_request
+            })
+
             self.listJobs()
             resolve()
           }
@@ -150,9 +153,7 @@ var JobBoard = (function () {
       jobTable.open()
     },
     listJobs: function () {
-      var jobTableRowsHtml = jobs.filter(function (job) {
-        return !job.pull_request
-      }).map(buildJobItem).join('')
+      var jobTableRowsHtml = jobs.map(buildJobItem).join('')
       jobBody.set(jobTableRowsHtml)
     },
     showTable: jobTable.open
