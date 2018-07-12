@@ -30,9 +30,9 @@
   <meta name="apple-mobile-web-app-title" content="#TechMasters"/>
 
   <meta property="og:type" content="website"/>
-  <meta itemprop="image" content="{{ '/assets/images/splash.jpg' | prepend: site.url }}"/>
-  <meta property="og:image" content="{{ '/assets/images/splash.jpg' | prepend: site.url }}"/>
-  <meta name="twitter:image:src" content="{{ '/assets/images/splash.jpg' | prepend: site.url }}"/>
+  <meta itemprop="image" content="{{ '/assets/images/splash.jpg' | prepend: site.url }}?pubDate={{ site.time | date: '%s' }}"/>
+  <meta property="og:image" content="{{ '/assets/images/splash.jpg' | prepend: site.url }}?pubDate={{ site.time | date: '%s' }}"/>
+  <meta name="twitter:image:src" content="{{ '/assets/images/splash.jpg' | prepend: site.url }}?pubDate={{ site.time | date: '%s' }}"/>
 
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png"/>
   <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-32x32.png" sizes="32x32"/>
