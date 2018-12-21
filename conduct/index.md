@@ -42,20 +42,20 @@ Falsely impersonating a TechMasters organizer, administrator, or any other perso
 
 Although not explicitly called out in this CoC, we ask that all moderators be aware of and intervene in the case of spam.
 
-Please don't "spam" through our Slack as none of our users like it. Spam is a post or a series of posts where the content is primarily solicitation, nonsense, overly short/long, or off-topic. Posts, where the content is not hand-crafted or is too generic/useless, may also be considered spam. Spam accounts are user accounts which post spam content or are created in series to secure access to the site and its privileges, or both. Spam posts and accounts may be automated or manual.
-
-We realize spam can be hard to define in some cases, so we will rely on the community or moderators to identify and flag it and handle it appropriately. Obvious spam posts should be promptly deleted; non-obvious spam may be flagged for review. Users are encouraged to flag posts as spam to help bring them to a moderator’s attention.
-
-Not all spam posts are by spam users. For example, a legitimate user account may be compromised. If a moderator notices a reputable user account posting spam, the spam post(s) should be deleted immediately, and the user notified. If spam posts continue, the account may be suspended until the user can regain control of their account.
-
-Commercial content is allowed if relevant to answering a question or keeping in line with a topic. Additionally, TechMasters has a couple of channels dedicated to specific, relevant, commercial content. These channels include `#deals` for posting deal-related content (sales, coupons, etc.), `#showcase` where users can feature their own start-ups and services to solicit feedback, and `#events` to share related community events.
-
 TechMasters reserves the right to delete spam content as well as banning a user at any time, without notice, from the Slack for spamming. Some examples of spam include, but are not limited to:
 
 - Posting the same message to more than 1 channel.
 - Sharing your own email in a public channel.
-- Requesting members to fill a feedback form without consulting an admin prior to posting.
+- Requesting members to fill a feedback form or market research survey without consulting an admin prior to posting.
 - Poaching members to join your community.
+
+Please don't "spam" through our Slack as none of our users like it. Spam is a post or a series of posts where the content is primarily solicitation, nonsense, overly short/long, or off-topic. Posts, where the content is not hand-crafted or is too generic/useless, may also be considered spam. Spam accounts are user accounts which post spam content or are created in series to secure access to the site and its privileges, or both. Spam posts and accounts may be automated or manual.
+
+We realize spam can be challenging to define in some cases, so we will rely on the community or moderators to identify and flag it and handle it appropriately. Obvious spam posts should be promptly deleted; non-obvious spam may be flagged for review. Users are encouraged to flag posts as spam to help bring them to a moderator’s attention.
+
+Not all spam posts are by spam users. For example, a legitimate user account may be compromised. If a moderator notices a reputable user account posting spam, the spam post(s) should be deleted immediately, and the user notified. If spam posts continue, the account may be suspended until the user can regain control of their account.
+
+Commercial content is allowed if relevant to answering a question or keeping in line with a topic, but always disclose any affiliations you may have with such content. Additionally, TechMasters has a couple of channels dedicated to specific, relevant, commercial content. These channels include `#deals` for posting deal-related content (sales, coupons, etc.), `#showcase` where users can feature their own start-ups and services to solicit feedback, and `#events` to share related community events.
 
 When in doubt, consult one of the admins for case-by-case advice.
 
