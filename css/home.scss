@@ -14,7 +14,27 @@
 
 .tm-card--join {
   font-size: 1.25rem;
+  padding: 0 1.5rem 2rem;
   justify-content: center;
+}
+
+.tm-signup {
+  font-size: 100%;
+  margin-bottom: 1em;
+
+  p {
+    font-size: 1em;
+  }
+  
+  label {
+    padding-left: 1.5em;
+    text-indent: -1.5em;
+    display: block;
+  }
+
+  > div {
+    margin-bottom: 0.5em;
+  }
 }
 
 .tm-card-channel {
