@@ -47,10 +47,92 @@ partners:
 ---
 
 <div class="tm-container mdl-grid">
-  <div class="tm-card tm-card--join mdl-card mdl-color--white mdl-shadow--4dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop">
+  <div
+    class="tm-card tm-card--join mdl-card mdl-color--white mdl-shadow--4dp mdl-color-text--grey-800 mdl-cell mdl-cell--8-col mdl-cell--2-offset-desktop"
+  >
     <div class="mdl-grid">
       <div class="mdl-cell mdl-cell--12-col">
-        <a class="mdl-button mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect" href="{{ page.join }}">Join our Slack Channel</a>
+        <h3>Join our Slack community!</h3>
+        <legend class="tm-signup">
+          <p>
+            By choosing to join the TechMasters community, you agree to the
+            terms in our <a href="/conduct/">code of conduct</a>.
+          </p>
+          <div>
+            <label>
+              <input autocomplete="off" type="checkbox" id="wontAbuse" />
+              I will treat others with mutual respect and will not abuse others
+            </label>
+          </div>
+          <div>
+            <label>
+              <input autocomplete="off" type="checkbox" id="wontSpam" />
+              I will not spam, and will read channel descriptions before posting
+            </label>
+          </div>
+          <div>
+            <label>
+              <input autocomplete="off" type="checkbox" id="willUphold" />
+              I agree to uphold the code of conduct
+            </label>
+          </div>
+        </legend>
+        <a
+          id="signupBtn"
+          disabled="true"
+          data-disabled="true"
+          class="mdl-button mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect"
+          href=""
+          aria-describedby="formWarning"
+          >Join our Slack Network</a
+        >
+        <span id="formWarning" tabindex="-1" style="display: none; margin-top: 0.5em">
+          You must agree to our code of conduct by checking the boxes above.
+        </span>
+
+        <script>
+          // form validation
+          var url = '{{ page.join }}'
+          var warningOpen = 'You must agree to our code of conduct by checking the boxes above. <a href="#wontAbuse">Go to first checkbox</a>'
+
+          var wontAbuse = document.getElementById('wontAbuse')
+          var wontSpam = document.getElementById('wontSpam')
+          var willUphold = document.getElementById('willUphold')
+          var signupBtn = document.getElementById('signupBtn')
+          var formWarning = document.getElementById('formWarning')
+
+          var validate = function () {
+            if (wontAbuse.checked && wontSpam.checked && willUphold.checked) {
+              // Form valid
+              signupBtn.setAttribute('href', url)
+              signupBtn.dataset.disabled = 'false'
+              signupBtn.removeAttribute('disabled')
+              formWarning.style.display = 'none'
+              formWarning.innerHTML = ''
+            } else {
+              // Form invalid
+              signupBtn.setAttribute('href', '')
+              signupBtn.dataset.disabled = 'true'
+              signupBtn.setAttribute('disabled', 'true')
+            }
+          }
+
+          wontAbuse.addEventListener('change', validate)
+          wontSpam.addEventListener('change', validate)
+          willUphold.addEventListener('change', validate)
+
+          signupBtn.addEventListener('click', function (e) {
+            if (e.currentTarget.dataset.disabled === 'true') {
+              // Signup link clicked while disabled
+              e.preventDefault()
+              formWarning.style.display = 'block'
+              formWarning.innerHTML = warningOpen
+              window.requestAnimationFrame(function () {
+                formWarning.focus()
+              })
+            }
+          })
+        </script>
 
         <!-- Registration for Slack has been temporarily disabled. Please check back here at a later time.<br/>Contact us on <a href="https://twitter.com/techmasterschat" target="_blank">Twitter</a> if you wish to be invited.-->
       </div>
@@ -58,33 +140,47 @@ partners:
   </div>
 
   <div class="mdl-cell mdl-cell--12-col">
-    <h3 class="mdl-typography--text-center mdl-color-text--primary-dark">Official Communities</h3>
+    <h3 class="mdl-typography--text-center mdl-color-text--primary-dark">
+      Official Communities
+    </h3>
   </div>
 
   {% for partner in page.partners %}
-    <div class="tm-card tm-card-partner mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col-phone mdl-cell--4-col-tablet mdl-cell--2-col-desktop {% cycle 'mdl-cell--2-offset-desktop', '', '', '' %}">
-      <div class="mdl-card__title mdl-card--expand mdl-typography--text-center">
-        <img src="/assets/images/partners/{{ partner.logo }}"/>
-      </div>
-
-      <div class="mdl-card__actions mdl-card--border mdl-typography--text-center"><a href="{{ partner.link }}">{{ partner.name }}</a></div>
+  <div
+    class="tm-card tm-card-partner mdl-card mdl-shadow--2dp mdl-cell mdl-cell--2-col-phone mdl-cell--4-col-tablet mdl-cell--2-col-desktop {% cycle 'mdl-cell--2-offset-desktop', '', '', '' %}"
+  >
+    <div class="mdl-card__title mdl-card--expand mdl-typography--text-center">
+      <img src="/assets/images/partners/{{ partner.logo }}" />
     </div>
+
+    <div class="mdl-card__actions mdl-card--border mdl-typography--text-center">
+      <a href="{{ partner.link }}">{{ partner.name }}</a>
+    </div>
+  </div>
   {% endfor %}
 
   <div class="mdl-cell mdl-cell--12-col">
-    <h3 class="mdl-typography--text-center mdl-color-text--primary-dark">Featured Channels</h3>
+    <h3 class="mdl-typography--text-center mdl-color-text--primary-dark">
+      Featured Channels
+    </h3>
   </div>
 
   {% for channel in page.channels %}
-    <div class="tm-card tm-card-channel tm-card-channel--{{ channel.title | downcase }} mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--4-col-desktop {% cycle 'mdl-cell--2-offset-desktop', '' %}">
-      <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">#{{ channel.title }}</h2>
-      </div>
-      <div class="mdl-card__supporting-text">{{ channel.description }}</div>
-      <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect" href="https://techmasters.slack.com/messages/{{ channel.title | downcase }}/">Live Discussion</a>
-        <div class="mdl-layout-spacer"></div>
-      </div>
+  <div
+    class="tm-card tm-card-channel tm-card-channel--{{ channel.title | downcase }} mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--4-col-desktop {% cycle 'mdl-cell--2-offset-desktop', '' %}"
+  >
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">#{{ channel.title }}</h2>
     </div>
+    <div class="mdl-card__supporting-text">{{ channel.description }}</div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a
+        class="mdl-button mdl-button--colored mdl-button--raised mdl-js-button mdl-js-ripple-effect"
+        href="https://techmasters.slack.com/messages/{{ channel.title | downcase }}/"
+        >Live Discussion</a
+      >
+      <div class="mdl-layout-spacer"></div>
+    </div>
+  </div>
   {% endfor %}
 </div>
