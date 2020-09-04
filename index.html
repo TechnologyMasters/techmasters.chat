@@ -93,7 +93,7 @@ partners:
         <script>
           // form validation
           var url = '{{ page.join }}'
-          var warningOpen = 'You must agree to our code of conduct by checking the boxes above. <a href="#wontAbuse">Go to first checkbox</a>'
+          var warningOpen = 'You must agree to our code of conduct by checking the boxes above. <a href="#wontAbuse" role="button" draggable="false">Go to first checkbox</a>'
 
           var wontAbuse = document.getElementById('wontAbuse')
           var wontSpam = document.getElementById('wontSpam')
@@ -121,15 +121,24 @@ partners:
           wontSpam.addEventListener('change', validate)
           willUphold.addEventListener('change', validate)
 
+          // Error handler when user clicks on disabled signup link
           signupBtn.addEventListener('click', function (e) {
             if (e.currentTarget.dataset.disabled === 'true') {
-              // Signup link clicked while disabled
               e.preventDefault()
               formWarning.style.display = 'block'
               formWarning.innerHTML = warningOpen
               window.requestAnimationFrame(function () {
                 formWarning.focus()
               })
+            }
+          })
+
+          // Allow spacebar to toggle links whose role is `button`
+          document.addEventListener('keydown', (e) => {
+            let target = e.target
+            if (e.keyCode === 32 && target.getAttribute('role') === 'button') {
+              e.preventDefault()
+              target.click()
             }
           })
         </script>
