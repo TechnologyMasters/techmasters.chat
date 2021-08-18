@@ -4,7 +4,7 @@ title: Code of Conduct
 redirect_from: "/coc/"
 ---
 
-Last modified: December 31, 2020
+Last modified: August 17, 2021
 
 #### Welcome to the TechMasters Community!
 
@@ -12,8 +12,8 @@ By joining and participating in the TechMasters community, you agree to abide by
 
 #### Community Rules
 
-1. **Do Not Spam** — Posting irrelevant, overly-long, annoying, repetitive, or inappropriate messages are considered spam and are disallowed. This includes posting the same message to multiple channels or using a bot or script to post on your behalf.
-2. **No Self-Promotions or Solicitations** — Posting community invites, ads, surveys, or other solicitations are also disallowed, including unsolicited direct messages to other users. User Promotions are only allowed in #showcase and #events, except for surveys and invites.
+1. **Do Not Spam** — Spam manifests itself in many ways, including bulk/bot-generated messages, profanity, insults, hate speech, malicious links, fraudulent reviews, fake friends, and by posting personally identifiable information or irrelevant content. Violators will be banned.
+2. **Keep Ads In Their Place** — Promotions for user-associated products, projects, and services are ONLY allowed in #showcase and #events. Surveys, community invites, unsolicited direct messages, and other solicitations are not allowed anywhere. Violators may be warned or banned.
 3. **Use The Jobs Board** — All job postings must be posted through the jobs board at https://techmasters.chat/jobs or in #jobs. No job may be posted that involves fraud, scams, hacking, discrimination, or any situation that may be illegal in the jurisdiction in which the job is located.
 4. **Be Friendly and Respectful** — No harassment, hate speech, racism, sexism, malicious trolling, etc. You may be banned immediately and without warning or recourse. Additionally, be aware we have an incredibly varied user base when it comes to knowledge, so please be patient and help each other.
 5. **No NSFW or Obscene Content** — This includes text, images, or links featuring nudity, sex, hard violence, or other graphically disturbing content.
@@ -23,7 +23,7 @@ By joining and participating in the TechMasters community, you agree to abide by
 9. **Protect Your Privacy & Security** — Be cautious about giving out personally identifiable information to strangers online, which may be used against you. This is also a public community that anyone can join and read, so be mindful of what you diclose about yourself or your company. Be sure to use 2FA.
 10. **Accept Responsibility** — You are responsible and liable for all your activities while participating in our community. You are responsible for anything you say or post and for protecting your own computer system and accounts.
 11. **See Something? Say Something!** — If you see something against the rules or something that makes you feel unsafe, let staff know. We want this server to be a welcoming space! TechMasters staff will be identifiable by the purple TechMaster 'TM' logo in their Slack status.
-12. **Administrators Have The Final Say On Everything Posted To The Community** — Our rules are intended to protect our users. Any user may be removed and rules modified at any time to help ensure all users are able to flourish and grow. Not sure about posting something? Ask an Administrator before posting.
+12. **Administrators Have The Final Say On Everything Posted To The Community** — Our rules are intended to protect our users. Any user may be removed and rules modified at any time to help protect the health of the community and to ensure all users are able to flourish and grow. Not sure about posting something? Ask an Administrator before posting.
 
 #### Administrators
 
