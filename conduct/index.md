@@ -22,7 +22,7 @@ By joining and participating in the TechMasters community, you agree to abide by
 8. **Keep Politics In Their Place** — No political discussions outside of #politics, or when relevant, #world and #canadia.
 9. **Protect Your Privacy & Security** — Be cautious about giving out personally identifiable information to strangers online, which may be used against you. This is also a public community that anyone can join and read, so be mindful of what you diclose about yourself or your company. Be sure to use 2FA.
 10. **Accept Responsibility** — You are responsible and liable for all your activities while participating in our community. You are responsible for anything you say or post and for protecting your own computer system and accounts.
-11. **See Something? Say Something!** — If you see something against the rules or something that makes you feel unsafe, let staff know. We want this server to be a welcoming space! TechMasters staff will be identifiable by the purple TechMaster 'TM' logo in their Slack status.
+11. **See Something? Say Something!** — If you see something against the rules or something that makes you feel unsafe, let staff know. We want this server to be a welcoming space! TechMasters staff will be identifiable by the gold TechMaster 'TM' logo in their Slack status.
 12. **Administrators Have The Final Say On Everything Posted To The Community** — Our rules are intended to protect our users. Any user may be removed and rules modified at any time to help protect the health of the community and to ensure all users are able to flourish and grow. Not sure about posting something? Ask an Administrator before posting.
 
 #### Administrators
