@@ -1,7 +1,7 @@
 ---
 layout: home
 
-join: https://join.slack.com/t/techmasters/shared_invite/zt-ppkrvygw-9ywgtFPehrLG759rHB0Vcg
+join: https://join.slack.com/t/techmasters/shared_invite/zt-144kg84gz-fGdHKoKtabZf5cXz8mBnEw
 
 channels:
   - title: General
@@ -86,61 +86,66 @@ partners:
           aria-describedby="formWarning"
           >Join our Slack Network</a
         >
-        <span id="formWarning" tabindex="-1" style="display: none; margin-top: 0.5em">
+        <span
+          id="formWarning"
+          tabindex="-1"
+          style="display: none; margin-top: 0.5em"
+        >
           You must agree to our code of conduct by checking the boxes above.
         </span>
 
         <script>
           // form validation
-          var url = '{{ page.join }}'
-          var warningOpen = 'You must agree to our code of conduct by checking the boxes above. <a href="#wontAbuse" role="button" draggable="false">Go to first checkbox</a>'
+          var url = "{{ page.join }}";
+          var warningOpen =
+            'You must agree to our code of conduct by checking the boxes above. <a href="#wontAbuse" role="button" draggable="false">Go to first checkbox</a>';
 
-          var wontAbuse = document.getElementById('wontAbuse')
-          var wontSpam = document.getElementById('wontSpam')
-          var willUphold = document.getElementById('willUphold')
-          var signupBtn = document.getElementById('signupBtn')
-          var formWarning = document.getElementById('formWarning')
+          var wontAbuse = document.getElementById("wontAbuse");
+          var wontSpam = document.getElementById("wontSpam");
+          var willUphold = document.getElementById("willUphold");
+          var signupBtn = document.getElementById("signupBtn");
+          var formWarning = document.getElementById("formWarning");
 
           var validate = function () {
             if (wontAbuse.checked && wontSpam.checked && willUphold.checked) {
               // Form valid
-              signupBtn.setAttribute('href', url)
-              signupBtn.dataset.disabled = 'false'
-              signupBtn.removeAttribute('disabled')
-              formWarning.style.display = 'none'
-              formWarning.innerHTML = ''
+              signupBtn.setAttribute("href", url);
+              signupBtn.dataset.disabled = "false";
+              signupBtn.removeAttribute("disabled");
+              formWarning.style.display = "none";
+              formWarning.innerHTML = "";
             } else {
               // Form invalid
-              signupBtn.setAttribute('href', '')
-              signupBtn.dataset.disabled = 'true'
-              signupBtn.setAttribute('disabled', 'true')
+              signupBtn.setAttribute("href", "");
+              signupBtn.dataset.disabled = "true";
+              signupBtn.setAttribute("disabled", "true");
             }
-          }
+          };
 
-          wontAbuse.addEventListener('change', validate)
-          wontSpam.addEventListener('change', validate)
-          willUphold.addEventListener('change', validate)
+          wontAbuse.addEventListener("change", validate);
+          wontSpam.addEventListener("change", validate);
+          willUphold.addEventListener("change", validate);
 
           // Error handler when user clicks on disabled signup link
-          signupBtn.addEventListener('click', function (e) {
-            if (e.currentTarget.dataset.disabled === 'true') {
-              e.preventDefault()
-              formWarning.style.display = 'block'
-              formWarning.innerHTML = warningOpen
+          signupBtn.addEventListener("click", function (e) {
+            if (e.currentTarget.dataset.disabled === "true") {
+              e.preventDefault();
+              formWarning.style.display = "block";
+              formWarning.innerHTML = warningOpen;
               window.requestAnimationFrame(function () {
-                formWarning.focus()
-              })
+                formWarning.focus();
+              });
             }
-          })
+          });
 
           // Allow spacebar to toggle links whose role is `button`
-          document.addEventListener('keydown', (e) => {
-            let target = e.target
-            if (e.keyCode === 32 && target.getAttribute('role') === 'button') {
-              e.preventDefault()
-              target.click()
+          document.addEventListener("keydown", (e) => {
+            let target = e.target;
+            if (e.keyCode === 32 && target.getAttribute("role") === "button") {
+              e.preventDefault();
+              target.click();
             }
-          })
+          });
         </script>
 
         <!-- Registration for Slack has been temporarily disabled. Please check back here at a later time.<br/>Contact us on <a href="https://twitter.com/techmasterschat" target="_blank">Twitter</a> if you wish to be invited.-->
