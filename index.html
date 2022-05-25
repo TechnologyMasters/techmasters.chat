@@ -53,27 +53,36 @@ partners:
     <div class="mdl-grid">
       <div class="mdl-cell mdl-cell--12-col">
         <h3>Join our Slack community!</h3>
-        <legend class="tm-signup">
+        <legend class="tm-signup" id="signup">
           <p>
             By choosing to join the TechMasters community, you agree to the
             terms in our <a href="/conduct/">code of conduct</a>.
           </p>
           <div>
             <label>
-              <input autocomplete="off" type="checkbox" id="wontAbuse" />
+              <input autocomplete="off" type="checkbox" />
               I will treat others with mutual respect and will not abuse others
             </label>
           </div>
           <div>
             <label>
-              <input autocomplete="off" type="checkbox" id="wontSpam" />
+              <input autocomplete="off" type="checkbox" />
               I will not spam, and will read channel descriptions before posting
             </label>
           </div>
           <div>
             <label>
-              <input autocomplete="off" type="checkbox" id="willUphold" />
+              <input autocomplete="off" type="checkbox" />
               I agree to uphold the code of conduct
+            </label>
+          </div>
+          <div>
+            <label>
+              <input autocomplete="off" type="checkbox" />
+              I understand that TechMasters prefers conversations over
+              promotional content. If I join and only promote my product or
+              service and do not contribute to any conversations, I may receive
+              an immediate ban without notice
             </label>
           </div>
         </legend>
@@ -100,14 +109,15 @@ partners:
           var warningOpen =
             'You must agree to our code of conduct by checking the boxes above. <a href="#wontAbuse" role="button" draggable="false">Go to first checkbox</a>';
 
-          var wontAbuse = document.getElementById("wontAbuse");
-          var wontSpam = document.getElementById("wontSpam");
-          var willUphold = document.getElementById("willUphold");
+          var formInputs = document.querySelectorAll("#signup input");
           var signupBtn = document.getElementById("signupBtn");
           var formWarning = document.getElementById("formWarning");
 
           var validate = function () {
-            if (wontAbuse.checked && wontSpam.checked && willUphold.checked) {
+            const index = Array.from(formInputs).findIndex(
+              (el) => el.checked === false
+            );
+            if (index === -1) {
               // Form valid
               signupBtn.setAttribute("href", url);
               signupBtn.dataset.disabled = "false";
@@ -122,9 +132,9 @@ partners:
             }
           };
 
-          wontAbuse.addEventListener("change", validate);
-          wontSpam.addEventListener("change", validate);
-          willUphold.addEventListener("change", validate);
+          for (const input of formInputs) {
+            input.addEventListener("change", validate);
+          }
 
           // Error handler when user clicks on disabled signup link
           signupBtn.addEventListener("click", function (e) {
