@@ -109,15 +109,14 @@ partners:
           var warningOpen =
             'You must agree to our code of conduct by checking the boxes above. <a href="#wontAbuse" role="button" draggable="false">Go to first checkbox</a>';
 
-          var formInputs = document.querySelectorAll("#signup input");
           var signupBtn = document.getElementById("signupBtn");
           var formWarning = document.getElementById("formWarning");
 
           var validate = function () {
-            const index = Array.from(formInputs).findIndex(
-              (el) => el.checked === false
+            const unchecked = document.querySelectorAll(
+              '#signup input[type="checkbox"]:not(:checked)'
             );
-            if (index === -1) {
+            if (unchecked.length === 0) {
               // Form valid
               signupBtn.setAttribute("href", url);
               signupBtn.dataset.disabled = "false";
@@ -132,9 +131,9 @@ partners:
             }
           };
 
-          for (const input of formInputs) {
-            input.addEventListener("change", validate);
-          }
+          document
+            .getElementById("signup")
+            .addEventListener("change", validate);
 
           // Error handler when user clicks on disabled signup link
           signupBtn.addEventListener("click", function (e) {
