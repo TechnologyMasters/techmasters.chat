@@ -6,6 +6,8 @@ description: Connect with fellow Technologists &amp; Founders, Get help with cod
 # Build settings
 markdown: kramdown
 
+slack: https://join.slack.com/t/techmasters/shared_invite/zt-1ucbguzlt-Fe8B0VJrzB~d13z9Uc8gMw
+
 # Google Calendar API settings
 googleCalendar:
   apiKey: AIzaSyD5FZvh3-1WZMbBj0M10zzO3GEQQlYADXg
