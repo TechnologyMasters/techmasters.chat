@@ -29,7 +29,5 @@ By joining and participating in the TechMasters community, you agree to abide by
 
 - **Ahmad Nassri** - Contact [by email](mailto:ahmad@techmasters.email).
 - **Andrew Moore** - Contact [by email](mailto:andrew@techmasters.email).
-<!-- 
-- View the rest of our Admins by navigating to the [Team page](https://techmasters.slack.com/team) or by selecting "People & user groups" under "More" in the Slack application's sidebar then using the filter option to view all of the Admins.
--->
+
 Thanks for following this Code of Conduct and joining the TechMasters community!
