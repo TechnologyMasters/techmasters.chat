@@ -2,7 +2,7 @@
 
 ![Logo](assets/images/brand/logo-full.png)
 
-The official website for the [**#TechMasters**][website] Slack Group's website: [TechMasters.chat][website]
+The official website for the [**#TechMasters**][website] Discord Group's website: [TechMasters.chat][website]
 
 The site is published using [Jekyll](https://jekyllrb.com), and hosted on [GitHub Pages](https://help.github.com/articles/about-github-pages-and-jekyll/).
 
