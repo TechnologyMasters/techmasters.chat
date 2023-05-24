@@ -4,7 +4,7 @@ title: Code of Conduct
 redirect_from: "/coc/"
 ---
 
-Last modified: August 17, 2021
+Last modified: May 24, 2023
 
 #### Welcome to the TechMasters Community!
 
