@@ -17,7 +17,7 @@ By joining and participating in the TechMasters community, you agree to abide by
 3. **Use The Jobs Board** — All job postings must be posted through the jobs board at <https://techmasters.chat/jobs>. No job may be posted that involves any illegal activity in the jurisdiction in which the job is located. Job templates must be closely followed, otherwise they may get closed.
 4. **Be Friendly and Respectful** — No harassment, hate speech, racism, sexism, malicious trolling, etc. You may be banned immediately and without warning or recourse. Additionally, be aware we have an incredibly varied user base when it comes to knowledge, so please be patient and help each other.
 5. **No NSFW or Obscene Content** — This includes text, images, or links featuring nudity, sex, hard violence, or other graphically disturbing content.
-6. **Keep It Legal** — No piracy or illegal activities. All users are responsible for following both the [Slack User Terms of Service](https://slack.com/terms-of-service/user) and the [Slack Acceptable Use Policy](https://slack.com/acceptable-use-policy).
+6. **Keep It Legal** — No piracy or illegal activities. All users are responsible for following both the [Discord User Terms of Service](https://discord.com/terms) and the [Discord Community Guidelines](https://discord.com/guidelines).
 7. **Be Relevant** — Be mindful of channels and their topics. Failure to do so may result in loss of access to the channel or the community.
 8. **Keep Politics In Their Place** — No political discussions outside of #politics, or when relevant, #world and #canadia.
 9. **Protect Your Privacy & Security** — Be cautious about giving out personally identifiable information to strangers online, which may be used against you. This is also a public community that anyone can join and read, so be mindful of what you diclose about yourself or your company. Be sure to use 2FA.
@@ -27,8 +27,9 @@ By joining and participating in the TechMasters community, you agree to abide by
 
 #### Administrators
 
-- **Ahmad Nassri** - Contact [@ahmadnassri on Slack](https://techmasters.slack.com/messages/@ahmadnassri) or [by email](mailto:ahmad@techmasters.email).
-- **Andrew Moore** - Contact [@awmoore on Slack](https://techmasters.slack.com/messages/@awmoore) or [by email](mailto:andrew@techmasters.email).
+- **Ahmad Nassri** - Contact [by email](mailto:ahmad@techmasters.email).
+- **Andrew Moore** - Contact [by email](mailto:andrew@techmasters.email).
+<!-- 
 - View the rest of our Admins by navigating to the [Team page](https://techmasters.slack.com/team) or by selecting "People & user groups" under "More" in the Slack application's sidebar then using the filter option to view all of the Admins.
-
+-->
 Thanks for following this Code of Conduct and joining the TechMasters community!
