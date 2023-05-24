@@ -27,7 +27,11 @@ By joining and participating in the TechMasters community, you agree to abide by
 
 #### Administrators
 
-- **Ahmad Nassri** - Contact [by email](mailto:ahmad@techmasters.email).
-- **Andrew Moore** - Contact [by email](mailto:andrew@techmasters.email).
+Should you need to contact our Administrators, please send us a DM.
+
+- **Ahmad Nassri** - [Discord Profile](https://discordapp.com/users/292713944060002315).
+- **Andrew Moore** - [Discord Profile](https://discordapp.com/users/172908093150068736).
+
+_Note: Direct links to our Discord profiles may not work if you open them in the desktop client. You may instead open them in your web browser._
 
 Thanks for following this Code of Conduct and joining the TechMasters community!
